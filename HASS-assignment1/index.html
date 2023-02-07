@@ -2,10 +2,11 @@
 <html>
 
 <head>
-  <title>Singapore's Pollutant Standards Index (PSI) Today</title>
+  <title>Singapore's Pollutant Standards Index (PSI) Today - Alice Lee</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Demonstration of Pollutant Standards Index data extraction from an API, using Vue.js and Axios">
+  <meta name="description"
+    content="Demonstration of Pollutant Standards Index data extraction from an API, using Vue.js and Axios">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -21,65 +22,69 @@
       <header class="text-center col-12">
         <div class="buffer col-12"></div>
         <h1>Pollutant Standards Index (PSI) in Singapore</h1>
-        <div class="buffer col-12"></div>
+
+        <div class="table" id="app" style="overflow-x:auto;">
+          <table id="datatable" class="table">
+            <div v-for="(result, index) in results['items']" :key="index">
+              <h2>
+
+                <!--PSI Status-->
+                PSI Status: <span class="status">{{results['api_info']['status'].toUpperCase()}}</span><br>
+
+                <!-- Timestamp -->
+                Last updated: {{new Date(result['timestamp']).toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric'
+                })}}
+                <button onClick="window.location.href=window.location.href">Refresh</button><br>
+              </h2>
+            </div>
       </header>
+      <!--Air quality readings-->
+      <thead>
+        <tr>
+          <th>Metric (A-Z)</th>
+          <th>National</th>
+          <th>North</th>
+          <th>East</th>
+          <th>South</th>
+          <th>West</th>
+          <th>Central</th>
+        </tr>
+      </thead>
 
-      <div class="table" id="app" style="overflow-x:auto;">
-        <table id="datatable" class="table">
-          <!-- Timestamp -->
-          <div v-for="(result, index) in results['items']" :key="index">
-            <h2>Last updated: {{new Date(result['timestamp']).toLocaleString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-              hour: 'numeric',
-              minute: 'numeric'
-              })}}
-              <button onClick="window.location.href=window.location.href">Refresh</button>
-            </h2>
-          </div>
-
-          <thead>
-            <tr>
-              <th>Metric (A-Z)</th>
-              <th>National</th>
-              <th>North</th>
-              <th>East</th>
-              <th>South</th>
-              <th>West</th>
-              <th>Central</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr v-for="metric in sortedMetrics" :key="metric"
-              v-bind:style="{ backgroundColor: metric === 'psi_twenty_four_hourly' ? '#dbd1d0' : '' }" >
-              <td v-text="metric" style="font-weight:bold"></td>
-              <td v-text="results['items'][0]['readings'][metric]['national']"></td>
-              <td v-text="results['items'][0]['readings'][metric]['north']"></td>
-              <td v-text="results['items'][0]['readings'][metric]['east']"></td>
-              <td v-text="results['items'][0]['readings'][metric]['south']"></td>
-              <td v-text="results['items'][0]['readings'][metric]['west']"></td>
-              <td v-text="results['items'][0]['readings'][metric]['central']"></td>
-            </tr>
-          </tbody>
-        </table>
-
-      </div>
-      <div class="footer">
-        The highlighted "psi_twenty_four_hourly" row represents the 24-hour average of PM 2.5 concentration levels. To
-        determine if a PSI value represents healthy air quality levels, visit the air quality descriptors
-        <a href="https://www.haze.gov.sg/" target="_blank">here</a>.<br>
-        <a href="https://api.data.gov.sg/v1/environment/psi" target="_blank">API Data Source</a> |
-        <a href="https://data.gov.sg/dataset/psi" target="_blank">About Dataset</a> |
-        <a href="https://news.mit.edu/2018/mit-researchers-peat-burning-sumatra-causes-severe-haze-singapore-1121
-          " target="_blank">Image Credit</a> |
-        Created by <a href="https://lenezoe.github.io/" target="_blank">Alice Lee</a>.
-
-      </div>
+      <tbody>
+        <tr v-for="metric in sortedMetrics" :key="metric"
+          v-bind:style="{ backgroundColor: metric === 'psi_twenty_four_hourly' ? '#dbd1d0' : '' }">
+          <td v-text="metric" style="font-weight:bold"></td>
+          <td v-text="results['items'][0]['readings'][metric]['national']"></td>
+          <td v-text="results['items'][0]['readings'][metric]['north']"></td>
+          <td v-text="results['items'][0]['readings'][metric]['east']"></td>
+          <td v-text="results['items'][0]['readings'][metric]['south']"></td>
+          <td v-text="results['items'][0]['readings'][metric]['west']"></td>
+          <td v-text="results['items'][0]['readings'][metric]['central']"></td>
+        </tr>
+      </tbody>
+      </table>
 
     </div>
-    
+    <div class="footer">
+      The highlighted "psi_twenty_four_hourly" row represents the 24-hour average of PM 2.5 concentration levels.
+      <br>
+      <a href="https://www.haze.gov.sg/" target="_blank">Air Quality Descriptors</a> |
+      <a href="https://api.data.gov.sg/v1/environment/psi" target="_blank">API Data Source</a> |
+      <a href="https://data.gov.sg/dataset/psi" target="_blank">About Dataset</a> |
+      <a href="https://news.mit.edu/2018/mit-researchers-peat-burning-sumatra-causes-severe-haze-singapore-1121
+          " target="_blank">Image Credit</a> |
+      Created by <a href="https://lenezoe.github.io/" target="_blank">Alice Lee</a>.
+
+    </div>
+
+  </div>
+
   </div>
 
   <script>
@@ -91,16 +96,17 @@
       computed: {
         sortedMetrics: function () { //  defines a computed function/property named "sortedMetrics"
           return Object.keys(this.results['items'][0]['readings']).sort(); // sortedMetrics sorts the keys of the object in this.results['items'][0]['readings'].
-        } 
+        }
       },
       created: function () { // lifecycle hook in Vue, which is called after the application is created .
-        axios 
+        axios
           .get("https://api.data.gov.sg/v1/environment/psi") //this line makes a GET request using the Axios library to the specified URL/API endpoint.
-          .then(response => {this.results = response.data; // The API response is then passed to the 'then' callback function, which is stored in the "results" array.
+          .then(response => {
+            this.results = response.data; // The API response is then passed to the 'then' callback function, which is stored in the "results" array.
           });
       }
     });
-    </script>
+  </script>
 
 </body>
 

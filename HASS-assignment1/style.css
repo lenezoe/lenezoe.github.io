@@ -16,13 +16,13 @@ h1 {
 font-size: 1.7rem;
 font-weight: 900;
 color: #1F0E04;
+font-weight: 600;
 }
 
 h2 {
   font-size: 1rem;
   color: #1F0E04;
-  text-align:center;
-  font-weight:bold;
+  text-align:left;
   }
 
 h2 button{
@@ -36,10 +36,15 @@ div {
     overflow-x: auto;
   }
 
+.status { 
+  font-weight:bold;
+  font-weight: 900;
+} 
+
 .table{
 margin-left: auto;
 margin-right: auto;
-width:85%;
+width:100%;
 }
 
 @media only screen and (max-width: 768px) {
@@ -84,8 +89,9 @@ tr:hover {
   margin-right: auto;
   margin-top:-15px;
   padding:5px;
-  width:70%;
+  width:100%;
   font-size: .9rem;
+  text-align:left;
 }
 
 a {
