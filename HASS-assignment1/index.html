@@ -52,15 +52,15 @@
           </thead>
 
           <tbody>
-            <tr v-for="(value, key) in results['items'][0]['readings']" :key="key"
-              v-bind:style="{ backgroundColor: key === 'psi_twenty_four_hourly' ? '#dbd1d0' : '' }">
-              <td v-text="key" style="font-weight:bold"></td>
-              <td v-text="value['national']"></td>
-              <td v-text="value['north']"></td>
-              <td v-text="value['east']"></td>
-              <td v-text="value['south']"></td>
-              <td v-text="value['west']"></td>
-              <td v-text="value['central']"></td>
+            <tr v-for="metric in sortedMetrics" :key="metric"
+              v-bind:style="{ backgroundColor: metric === 'psi_twenty_four_hourly' ? '#dbd1d0' : '' }" >
+              <td v-text="metric" style="font-weight:bold"></td>
+              <td v-text="results['items'][0]['readings'][metric]['national']"></td>
+              <td v-text="results['items'][0]['readings'][metric]['north']"></td>
+              <td v-text="results['items'][0]['readings'][metric]['east']"></td>
+              <td v-text="results['items'][0]['readings'][metric]['south']"></td>
+              <td v-text="results['items'][0]['readings'][metric]['west']"></td>
+              <td v-text="results['items'][0]['readings'][metric]['central']"></td>
             </tr>
           </tbody>
         </table>
@@ -69,12 +69,12 @@
       <div class="footer">
         The highlighted "psi_twenty_four_hourly" row represents the 24-hour average of PM 2.5 concentration levels. To
         determine if a PSI value represents healthy air quality levels, visit the air quality descriptors
-        <a class="link-dark" href="https://www.haze.gov.sg/" target="_blank">here</a>.<br>
-        <a class="link-dark" href="https://api.data.gov.sg/v1/environment/psi" target="_blank">API Data Source</a> |
-        <a class="link-dark" href="https://data.gov.sg/dataset/psi" target="_blank">About Dataset</a> |
-        <a class="link-dark" href="https://news.mit.edu/2018/mit-researchers-peat-burning-sumatra-causes-severe-haze-singapore-1121
+        <a href="https://www.haze.gov.sg/" target="_blank">here</a>.<br>
+        <a href="https://api.data.gov.sg/v1/environment/psi" target="_blank">API Data Source</a> |
+        <a href="https://data.gov.sg/dataset/psi" target="_blank">About Dataset</a> |
+        <a href="https://news.mit.edu/2018/mit-researchers-peat-burning-sumatra-causes-severe-haze-singapore-1121
           " target="_blank">Image Credit</a> |
-        Created by <a class="link-dark" href="https://lenezoe.github.io/" target="_blank">Alice Lee</a>
+        Created by <a href="https://lenezoe.github.io/" target="_blank">Alice Lee</a> using <a href="https://vuejs.org/api/options-state.html#data" target="_blank">Vue.js</a>.
 
       </div>
 
@@ -83,23 +83,24 @@
   </div>
 
   <script>
-    new Vue({ // create a new instance of Vue framework
+    var app = new Vue({ // create a new instance of Vue framework
       el: "#app", // specify that the root element of the Vue app is an ID element of "app"
       data: {
-        results: [] //  define that the data used in the app is called "results", which is an empty array.
+        results: [] //  define that the data used is called "results", which is an empty array.
       },
-
-      mounted() { // lifecycle hook in Vue, which is called after the application has been mounted to the DOM (i.e., the HTML has been rendered).
-        axios.get("https://api.data.gov.sg/v1/environment/psi") //this line makes a GET request using the Axios library to the specified URL, which is an API endpoint.
-        .then(response => {  // The API response is then passed to the 'then' callback function, which updates the value of the "results" data with the response data.
-          this.results = response.data; // This line updates the value of the "results" data with the data received from the API.
-        });
+      computed: {
+        sortedMetrics: function () { //  defines a computed function/property named "sortedMetrics"
+          return Object.keys(this.results['items'][0]['readings']).sort(); // sortedMetrics sorts the keys of the object in this.results['items'][0]['readings'].
+        } 
+      },
+      created: function () { // lifecycle hook in Vue, which is called after the application is created .
+        axios 
+          .get("https://api.data.gov.sg/v1/environment/psi") //this line makes a GET request using the Axios library to the specified URL/API endpoint.
+          .then(response => {this.results = response.data; // The API response is then passed to the 'then' callback function, which is stored in the "results" array.
+          });
       }
     });
-
-
-  </script>
-
+    </script>
 
 </body>
 
