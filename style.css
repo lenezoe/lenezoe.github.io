@@ -10,7 +10,7 @@ html {
 }
 
 h1 {
-font-size: 3rem;
+font-size: rem;
 color: #D7B2B7;
 }
 
@@ -48,13 +48,4 @@ hr {
 
 .buffer {
   height: 10px;
-}
-
-.carousel-inner h5 {
-  display:inline-table;
-  background: rgba(119, 85, 91, .5);
-}
-.carousel-inner p {
-  display:inline-table;
-  background: rgba(27, 15, 17, .5);
 }
