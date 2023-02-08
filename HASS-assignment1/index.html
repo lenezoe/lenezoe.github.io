@@ -58,7 +58,7 @@
 
       <tbody>
         <tr v-for="metric in sortedMetrics" :key="metric"
-          v-bind:style="{ backgroundColor: metric === 'psi_twenty_four_hourly' ? '#dbd1d0' : '' }">
+          v-bind:style="{ backgroundColor: metric === 'psi_twenty_four_hourly' ? '#fff' : '' }">
           <td v-text="metric" style="font-weight:bold"></td>
           <td v-text="results['items'][0]['readings'][metric]['national']"></td>
           <td v-text="results['items'][0]['readings'][metric]['north']"></td>
@@ -77,8 +77,6 @@
       <a href="https://www.haze.gov.sg/" target="_blank">Air Quality Descriptors</a> |
       <a href="https://api.data.gov.sg/v1/environment/psi" target="_blank">API Data Source</a> |
       <a href="https://data.gov.sg/dataset/psi" target="_blank">About Dataset</a> |
-      <a href="https://news.mit.edu/2018/mit-researchers-peat-burning-sumatra-causes-severe-haze-singapore-1121
-          " target="_blank">Image Credit</a> |
       Created by <a href="https://lenezoe.github.io/" target="_blank">Alice Lee</a>.
 
     </div>
