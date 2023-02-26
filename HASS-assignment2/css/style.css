@@ -72,15 +72,6 @@ p {
   text-align: center;
 }
 
-#home .btn-danger {
-  background: #ffa400 !important;
-  margin-right: 20px;
-}
-
-#home .btn-danger:hover {
-  background: #ffc400 !important;
-}
-
 #home .btn {
   background: #000000;
   border-color: transparent;

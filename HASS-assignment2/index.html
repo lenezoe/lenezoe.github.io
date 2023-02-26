@@ -80,16 +80,16 @@
 						quantitative
 						data - number of dengue cases every week - over 52 weeks in a year, from 2013 to 2020.
 					</p>
-					<p>However, the chart shows too many years of data at once, as well as only the
+					<p>The chart shows only the
 						<strong>weekly</strong> number of dengue cases.
-						Showing too many years makes it difficult for the viewer to
-						understand which are the focal data. In addition, since the news was written in terms of
-						"months" rather than the actual week,
-						the creator could have <strong>aggregated</strong> the weekly number of dengue cases by
-						<strong>month</strong> so that the reader does not have to mentally calculate which month each
-						week belongs to.
+						However, NEA's press release described the weekly trends in terms of
+						"past X months" rather than "weeks". This means the reader has to mentally calculate which month each
+						week in the chart belongs to, while referring to the text. 
+						The creator could have <strong>aggregated</strong> the weekly number of dengue cases by
+						<strong>month</strong> to reduce this cognitive effort.
 
 					</p>
+					<p>Showing many years in the chart also makes it difficult for the viewer to understand which are the focal data in NEA's message. </p>
 					<p>
 						Not showing the <strong>total</strong> number of dengue cases from 2013 to 2019 and
 						<strong>projected</strong> total dengue cases in 2020 makes it harder for the reader to believe
@@ -163,9 +163,6 @@
 
 		</div>
 
-	</div>
-
-	</div>
 	<div class="row">
 
 		<div class="col-md-6 col-sm-12 wow fadeInUp text-center" data-wow-delay="0.3s">
@@ -230,7 +227,6 @@
 
 	</div>
 
-	</div>
 
 	<div class="row">
 
@@ -318,7 +314,6 @@
 
 		</div>
 
-	</div>
 
 	<div class="row">
 
@@ -368,12 +363,12 @@
 							has a fertility rate of &quot;more than 1.5, but less than 2 children&quot; per female.</p>
 					</li>
 					<li>
-						<p><strong>Not exhaustive</strong> - What would a country with a fertility rate of &quot;1.0 or
+						<p><strong>Not exhaustive</strong> - What colour would a country with a fertility rate of &quot;1.0 or
 							less&quot;
-							children per female would be labelled as? Based on the colour legend, such countries should
-							not be on the chart. South Korea's fertility rate was 0.78 in 2022. However, South Korea's
-							polygon is coloured purple in the visualisation, although purple is supposed to mean
-							&quot;more than 1 kids per female&quot;.</p>
+							children per female would be encoded in? Based on the colour legend, such countries should
+							not be on the chart. South Korea's fertility rate was one of the world's lowest at 0.78 in 2022. However, South Korea's
+							polygon is coloured purple in the visualisation, although purple is supposed to symobolise
+							&quot;more than 1 kids per female&quot;. There is either an error with the labelling, or the data was inaccurate.</p>
 			</div>
 		</div>
 
@@ -415,11 +410,10 @@
 					few redundant channels that are meaningless:</p>
 				<ul>
 					<li>
-						<p><strong>Grouping of countries</strong> - The grouping of the polygons hardly follows any
+						<p><strong>Grouping of countries</strong> - The grouping of the polygons does not appear to follow any
 							logical grouping. For example, the European Union countries are all grouped into a single
 							polygon as if it is a single country (bottom of the circle), yet countries from the European
-							continent or other famous international political or economic unions are not grouped. Some
-							groupings of polygons appear meaningless. </p>
+							continent or other international political or economic unions are not grouped.</p>
 					</li>
 					<li>
 						<p><strong>Position of shapes</strong> - The creator tried to fit all countries into the shape
@@ -438,9 +432,6 @@
 
 	</div>
 
-	</div>
-
-
 	<div class="row">
 
 		<div class="col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
@@ -448,8 +439,8 @@
 				<h4> </h4>
 				<h3>Comparability is difficult</h3>
 				<p> It is <strong>hard to compare</strong> the size of similarly sized polygons as there is no consistent shape. There is
-					a wide range of shapes - some polygons can have 4 sizes (e.g., United States) while others have 12
-					(Brazil).</p>
+					a wide range of shapes - some polygons have 4 sizes (e.g., United States) while others have 13
+					(e.g., Brazil). One has to rely on the figures to tell the difference.</p>
 			</div>
 		</div>
 
@@ -464,10 +455,10 @@
 				<h3>Encoding of fertility rate data</h3>
 				<p><strong>1. Bin the fertility rate into more useful, mutually exclusive and exhaustive
 						categories:</strong> <br>
-					It is a commonly accepted fact that the replacement fertility rate needed to maintain a country's
-					population size is 2.1 children per female,
-					and any country with a fertility rate below this is expected to enter population decline over time.
-					The creator could consider just using a 3-point discrete colour scale: </p>
+					If we accept that the replacement fertility rate needed to maintain a country's
+					population size is 2.1 children per female, 
+					and any country with a fertility rate below this is expected to enter population decline over time, 
+					the creator could consider using a 3-point discrete colour scale (3 distinctly contrasting colours): </p>
 				<ol>
 					<li>
 						<p>Population growing: >=2.1 children per female</p>
@@ -480,12 +471,12 @@
 					</li>
 				</ol>
 				<p><strong>2. Use a continous colour scale for fertility rate:</strong> <br>
-					Instead of the first suggestion, the creator could also use a continuous colour scale to express
+					Instead of a discrete colour scale, the creator could use a continuous colour scale to express
 					ascending fertility rates across countries e.g., in terms of ascending colour saturation.
 				</p>
 				<p><strong>3. Consider a different visualisation to present population change rates across countries</strong> <br>
-					The creator could have subtracted the crude death rate from the crude birth rate to obtain the population change rate in the absence of migrations. 
-					As the obtained population change rate would be a continuous data type, the creator could consider a chloropeth map to show population change rate per country in terms of colour saturation.
+					The creator could have subtracted the crude death rate from the crude birth rate to obtain the population change rate in the absence of migrations, to express which countries are in danger of population decline. 
+					As the obtained population change rate would be a continuous data type, the creator could consider a <a href="https://datavizcatalogue.com/methods/choropleth.html" target="_blank">choropleth map</a> to show population change rate per country in terms of colour saturation.
 				</p>
 			</div>
 		</div>
@@ -498,8 +489,8 @@
 				<p>The visualisation should only have a <strong>single channel</strong> encoding each dataset:</p>
 				<ul>
 					<li>
-						<p>Total population size per country (treated as ratio data), encoded as a single channel such as area magnitude or position. If an overall globe shape is still desired by the creator, 
-							perhaps the creator could try to keep the shape of each polygon representing each country consistent (e.g., circle), while using purely an area magnitude channel. 
+						<p>Total population size per country (treated as continuous data), encoded via a single channel such as area magnitude or position. If a globe shape is still desired by the creator, 
+							perhaps the creator could try to keep the shape of each polygon representing each country within the globe consistent (e.g., circle), while using purely an area magnitude channel to encode population data. 
 						</p>
 					</li>
 					<li>
@@ -520,9 +511,6 @@
 <div class="text-center">
 	<p><a href="#">Back to Top</a></p>
 </div>
-
-
-</section>
 
 <!-- Footer section
 ================================================== -->
