@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Critique of Visualisations - 02.526 Assignment 2</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Critique of 2 data visualisations, submitted as part of an assignment for the 02.526 Interactive Data Visualisation elective in SUTD.">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<!-- Home section
+================================================== -->
+<section id="home">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12">
+				<h3 class="wow fadeInDown" data-wow-delay="0.2s">ASSIGNMENT 2</h3>
+				<h1 class="wow fadeInDown">CRITIQUE OF VISUALISATIONS</h1>
+				<h4>Based on 2 visualisation validation levels: Data / Task Abstraction → Visualisation Idiom</h4>
+				<a href="#chart1" class="btn btn-default smoothScroll wow fadeInUp" data-wow-delay="0.3s">Example 1 -
+					Dengue Trends</a>
+				<a href="#chart2" class="btn btn-default smoothScroll wow fadeInUp" data-wow-delay="0.6s">Example 2 -
+					World Fertility Rate</a>
+
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<!-- Header 1 section
+================================================== -->
+<section>
+	<div class="container" id="chart1">
+		<div class="row">
+			<div class="col-md-6 col-sm-12 wow fadeInDown" data-wow-delay="0.3s">
+				<h2>Example 1 - Dengue Trends in 2020</h2>
+				<p>This visualisation was published by the National Environment Agency (NEA) in Singapore on 3 June
+					2020, as
+					part of a press release to warn Singapore about the spike in dengue cases even as the COVID-19
+					pandemic was raging, and to urge collective efforts to prevent dengue.
+					Broadly, the chart was intended to complement NEA's message that the trend of dengue cases from
+					January to
+					April 2020 was abnormally high in Singapore's history.
+				</p>
+
+			</div>
+
+			<div class="col-md-6 col-sm-12 wow fadeInUp text-center" data-wow-delay="0.6s">
+				<img src="images/NEA-dengue2020.jpg" class="img-responsive" alt="Weekly Dengue Trends"><br>
+				<h4>Source: <a
+						href="https://www.nea.gov.sg/media/news/news/index/number-of-weekly-dengue-cases-expected-to-exceed-the-historical-high-of-891-unless-urgent-collective-community-action-is-taken"
+						target="_blank">NEA (3 June 2020)</a>
+				</h4>
+			</div>
+		</div>
+
+		<!-- Example  1 section
+================================================== -->
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
+				<div class="chart-des">
+					<h4>Data (What they are showing)</h4>
+					<h3>Chart more suitable for data exploration than communicating multiple messages</h3>
+					<p>The visualisation creator was trying to convey NEA's messages that in 2020, the annual trend of
+						<strong>(a) weekly</strong> and <strong>(b) total dengue</strong>
+						cases was abnormally higher than trend of dengue cases in specific years by plotting
+						quantitative
+						data - number of dengue cases every week - over 52 weeks in a year, from 2013 to 2020.
+					</p>
+					<p>However, the chart shows too many years of data at once, as well as only the
+						<strong>weekly</strong> number of dengue cases.
+						Showing too many years makes it difficult for the viewer to
+						understand which are the focal data. In addition, since the news was written in terms of
+						"months" rather than the actual week,
+						the creator could have <strong>aggregated</strong> the weekly number of dengue cases by
+						<strong>month</strong> so that the reader does not have to mentally calculate which month each
+						week belongs to.
+
+					</p>
+					<p>
+						Not showing the <strong>total</strong> number of dengue cases from 2013 to 2019 and
+						<strong>projected</strong> total dengue cases in 2020 makes it harder for the reader to believe
+						that the trend of high dengue cases from April to May 2020 would continue, given that it
+						<strong>coincided with the 2020 Circuit Breaker period</strong>, where more people stayed at
+						home and were exposed to mosquitoes in their neighbourhood.
+					</p>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-6 col-sm-12 wow fadeInDown" data-wow-delay="0.6s">
+				<div class="chart-des">
+					<h4>Idiom (How they are showing it)</h4>
+					<h3>Chart junk</h3>
+					<p>There are <strong>too many colours</strong> used, and it is not intuitive what colour is related
+						to which year.
+					</p>
+					<p>
+						The reader has to exert extra cognitive effort to link each year and colour on the legend, to
+						the colour of the line on the chart, before they can see the trend of the target year.</p>
+					<p>In addition, showing <strong>too many line markers</strong> (52 lines for 52 weeks) clutters the
+						chart and is redundant. It would be easier to read if the line markers were divided into months
+						instead.</p>
+
+				</div>
+			</div>
+
+			<div class="col-md-6 col-sm-12 wow fadeInDown" data-wow-delay="0.6s">
+				<div class="chart-des">
+					<h4></h4>
+					<h3>Hard to focus</h3>
+					<p>The lines are all of the <strong>same thickness</strong> and there is no salient colour that the
+						reader can focus
+						on. It is difficult for the reader to know which year(s) they are supposed to look at, or
+						compare.</p>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-6 col-sm-12 wow fadeInDown" data-wow-delay="0.3s">
+				<div class="chart-des">
+					<h4></h4>
+					<h3>Small font</h3>
+					<p>The visualisation on NEA's webpage is of poor resolution and the text on the figure is small,
+						making it difficult to see each data point clearly. </p>
+					<p>A possible reason for the poor resolution is that
+						the original chart was exported as a screenshot rather than in its original resolution. </p>
+					<p>Given that NEA's intended messages are of high public health importance, the data should be
+						conveyed more efficiently with a higher font size and resolution.
+						Downstream communication issues can happen as the media might either not replicate
+						the chart data
+						accurately, or simply reproduce the chart with <a
+							href="https://www.todayonline.com/singapore/explainer-why-eastern-and-northern-parts-singapore-suffer-largest-dengue-clusters-every"
+							target="_blank">suboptimal results</a>. <br>(Right: screenshot of a visualisation that seems
+						truncated, reproduced by TODAY based on NEA data)
+					</p>
+				</div>
+			</div>
+
+			<div class="col-md-6 col-sm-12 wow fadeInDown text-center" data-wow-delay="0.6s">
+				<img src="images/today-dengue.png" class="img-responsive" alt="Today's Chart">
+			</div>
+
+		</div>
+
+	</div>
+
+	</div>
+	<div class="row">
+
+		<div class="col-md-6 col-sm-12 wow fadeInUp text-center" data-wow-delay="0.3s">
+			<img src="images/suggested-1.png" class="img-responsive" alt="Weekly Dengue Trends"><br>
+			<img src="images/suggested-2.png" class="img-responsive" alt="Weekly Dengue Trends"><br>
+
+			Note: Above are illustrations using hypothetical data and is not reflective of actual trends.
+		</div>
+
+		<div class="col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
+			<div class="chart-des">
+				<h4>Suggestions to Improve</h4>
+				<h3>1. 2 Charts to Show Expected Trend</h3>
+
+				<p>Since this chart is intended for communication to the public, and not data exploratory analysis
+					by NEA, perhaps the creator
+					could have split this chart into 2 line charts with different data to convey different
+					meanings. Specifically, NEA mentioned in its press release that:</p>
+				<ul>
+					<li>
+						<p><em>
+								"Singapore has not seen such a high weekly number of dengue cases since the peak years
+								in 2013 and 2014"</em></p>
+					</li>
+					<p>Suggestion: Using a line chart, instead of showing every year of data, the creator could have
+						focused on the <strong>average
+							number</strong> of <strong>weekly</strong> dengue cases from 2013 to 2019 (black line), and
+						compared this
+						trend with 2020's historical number of weekly dengue cases (red line). This chart would have
+						communicated more clearly that 2020 has an abnormal trend of dengue cases compared to previous
+						years.</p>
+					<p>
+						The weekly case data can be aggregated into monthly data to be better aligned with NEA's
+						messages and avoid confusing the user.
+					</p>
+					<p>
+						If projected data is available, NEA could possibly illustrate that the trend of dengue cases
+						from January to June 2020 was expected to continue in the rest of 2020 if action was not taken.
+					</p>
+					<p>
+						<em>A chart illustrating this has been produced on the left.</em>
+					</p>
+
+					<p></p>
+					<li>
+						<p><em>"The number of dengue cases this year is expected to exceed the 15,998 cases reported in
+								2019, and
+								may even surpass the 22,170 cases reported in 2013"</em></p>
+						<p>
+							Suggestion: Using a column chart, the creator could have focused on the <strong>total
+								historical number</strong>
+							of dengue cases from <strong>2013 to 2020</strong> (1 bar per year), and show the
+							<strong>historical</strong>
+							(solid line) and <strong>projected</strong> (stacked on top of the 2020 solid bar) total
+							number of
+							cases in 2020.
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	</div>
+
+	<div class="row">
+
+		<div class="col-md-6 col-sm-12 wow fadeInDown" data-wow-delay="0.3s">
+			<div class="chart-des">
+				<h4>Suggestions to Improve</h4>
+				<h3>2. Polar Plot to Show Abnormal Weekly Trends</h3>
+				<p>Instead of a line chart, NEA could also choose to use a polar plot to show the weekly trends in
+					dengue across months and years more clearly.
+					The creator could bold the line for 2020 to make it more salient to the user. An example of a polar
+					plot showing data with monthly seasonality across years is shown on the right.
+				</p>
+			</div>
+		</div>
+
+		<div class="col-md-6 col-sm-12 wow fadeInDown text-center" data-wow-delay="0.6s">
+			<img src="images/polar-plot.png" class="img-responsive" alt="Today's Chart"><br>
+			<a href="https://towardsdatascience.com/5-types-of-plots-that-will-help-you-with-time-series-analysis-b63747818705"
+				target="_blank">Image Source</a>
+
+		</div>
+
+	</div>
+
+	</div>
+</section>
+
+<div class="text-center">
+	<p><a href="#">Back to Top</a></p>
+</div>
+
+<!-- Header 2 section
+================================================== -->
+<section>
+	<div class="container" id="chart2">
+		<div class="row">
+			<div class="col-md-6 col-sm-12 wow fadeInDown" data-wow-delay="0.3s">
+				<h2>Example 2 - World's Fertility Rate 2023</h2>
+				<p>This visualisation is published by the user <em>maps_us_eu</em> on the <a
+						href="https://www.reddit.com/r/dataisbeautiful/comments/115omq4/worlds_fertility_rate_2023_chart_scaled_to/"
+						target="_blank">Data is Beautiful subreddit</a> that is dedicated to "aesthetically pleasing
+					works of data visualisation".
+				</p>
+				<p>It is intended to express the fertility rate per country and showcase countries with either growing,
+					stable or declining population, with 2023 data. </p>
+			</div>
+
+			<div class="col-md-6 col-sm-12 wow fadeInUp text-center" data-wow-delay="0.6s">
+				<a href="images/fertilityrate-1.png" target="_blank"><img src="images/fertilityrate-1.png"
+						class="img-responsive" alt="World Fertility Rate"></a><br>
+				<h4>Source: <a
+						href="https://www.reddit.com/r/dataisbeautiful/comments/115omq4/worlds_fertility_rate_2023_chart_scaled_to/"
+						target="_blank"><em>maps_us_eu</em></a> (19 February 2023)
+				</h4>
+			</div>
+		</div>
+		<!-- Example 2 section
+================================================== -->
+
+		<div class="row">
+
+			<div class="col-md-6 col-sm-12 wow fadeInUp text-center" data-wow-delay="0.3s">
+				<img src="images/fertilityrate-pop.png" class="img-responsive" alt="Population data"><br>
+				<img src="images/fertilityrate-UN.png" class="img-responsive" alt="Fertility data from UN?"><br>
+
+			</div>
+
+			<div class="col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
+				<div class="chart-des">
+					<h4>Data (What they are showing)</h4>
+					<h3>Misleading data source</h3>
+					<p>The creator cited that the population size and fertility rate data were obtained in 2023, with
+						the latter from &quot;2023 United Nations Fertility Rate&quot;.</p>
+
+					<p>This is misleading, as the author posted this on 19 February 2023. To our best research,
+						statistics for world population size and fertility rate in 2023 by the United Nations were
+						unavailable at this time (26 February 2023), and were at best from
+						<a href="https://www.un.org/development/desa/pd/data/world-fertility-data"
+							target="_blank">2019</a> or
+						<a href="https://population.un.org/dataportal/data/indicators/49/locations/900/start/1950/end/2100/line/linetimeplotsingle"
+							target="_blank">projected</a>.
+					</p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="row">
+
+		<div class="col-md-12 col-sm-12 wow fadeInDown" data-wow-delay="0.6s">
+			<div class="chart-des">
+				<h4> </h4>
+				<h3>Misleading linking of 2 datasets</h3>
+				<p>It was misleading for the creator to directly link the concept of fertility rate with current
+					population size, if the
+					intent was to show population growth or decline.</p>
+
+				<p><strong>First</strong>, a country's population growth or decline is not attributed only to fertility
+					rate, but also
+					the concepts of mortality rate (which is further dependent on life expectancy), immigration and
+					emigration.</p>
+
+				<p><strong>Second</strong>, fertility rate is not based on the actual number of live births in a given
+					year (which birth rate might indicate),
+					but the average number of children of an imaginary woman who lives till the end of her entire
+					childbearing years (age 15 - 49) is expected to have, in line with the age-specific fertility rate
+					of the given year
+					(Source: <a href="https://data.worldbank.org/indicator/SP.DYN.TFRT.IN" target="_blank">World
+						Bank</a>). This has little bearing on the given country's population size in the given year,
+					although it provides informaton about the population's expected growth rate.
+				</p>
+			</div>
+		</div>
+
+	</div>
+	<div class="row">
+
+		<div class="col-md-6 col-sm-12 wow fadeInDown" data-wow-delay="0.3s">
+			<div class="chart-des">
+				<h4> </h4>
+				<h3>Inappropriate data binning and legend</h3>
+				<p>The dataset for fertility rate is expressed as &quot;number of kids per female&quot;, which is on a
+					continuous, ratio scale. However, the creator chose a discrete 6-colour scale to describe the
+					fertility rate of a given country, expressed in [>1, >1.5, >2, >3, >4, >5] kids per female.</p>
+
+				<p>This is confusing for the reader as the categories are:</p>
+				<ul>
+					<li>
+						<p><strong>Not mutually exclusive</strong> - there is no upper cap per category according to the
+							discrete colour
+							scale used. After scrutinising the visualisation, it is likely that the creator meant that a
+							country labelled with a fertility rate &quot;more than 1.5 children per woman&quot; actually
+							has a fertility rate of &quot;more than 1.5, but less than 2 children&quot; per female.</p>
+					</li>
+					<li>
+						<p><strong>Not exhaustive</strong> - What would a country with a fertility rate of &quot;1.0 or
+							less&quot;
+							children per female would be labelled as? Based on the colour legend, such countries should
+							not be on the chart. South Korea's fertility rate was 0.78 in 2022. However, South Korea's
+							polygon is coloured purple in the visualisation, although purple is supposed to mean
+							&quot;more than 1 kids per female&quot;.</p>
+			</div>
+		</div>
+
+		<div class="col-md-6 col-sm-12 wow fadeInDown text-center" data-wow-delay="0.6s">
+			<img src="images/fertilityrate-legend.png" class="img-responsive" alt="Fertility Rate Legend"><br>
+			<a href="https://towardsdatascience.com/5-types-of-plots-that-will-help-you-with-time-series-analysis-b63747818705"
+				target="_blank">Image Source</a>
+
+		</div>
+
+	</div>
+
+
+	<div class="row">
+
+		<div class="col-md-6 col-sm-12 wow fadeInUp text-center" data-wow-delay="0.3s">
+			<img src="images/fertilityrate-1.png" class="img-responsive" alt="fertility map">
+
+		</div>
+
+		<div class="col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
+			<div class="chart-des">
+				<h4>Idiom (How they are showing it)</h4>
+				<h3>Redundant channels</h3>
+				<p>The visualisation has multiple channels, and yet only encodes 2 data scales:</p>
+				<ul>
+					<li>
+						<p>Total population size per country (treated as ratio data), encoded as an area magnitude
+							channel (2D size of polygons)</p>
+					</li>
+					<li>
+						<p>Fertility rate per country (treated as nominal data), encoded as discrete colour scale</p>
+					</li>
+				</ul>
+
+
+				<p>According to Tamara Munzner, a visualisation is considered to be "expressiveness" only if the
+					visualisation's encodings express all of, and only, relevant information of the dataset. There are a
+					few redundant channels that are meaningless:</p>
+				<ul>
+					<li>
+						<p><strong>Grouping of countries</strong> - The grouping of the polygons hardly follows any
+							logical grouping. For example, the European Union countries are all grouped into a single
+							polygon as if it is a single country (bottom of the circle), yet countries from the European
+							continent or other famous international political or economic unions are not grouped. Some
+							groupings of polygons appear meaningless. </p>
+					</li>
+					<li>
+						<p><strong>Position of shapes</strong> - The creator tried to fit all countries into the shape
+							of a globe. However, the positions of the countries on the visualisation do not appear to be
+							aligned with their actual positions on a world globe. For example, the United States appears
+							directly below India.</p>
+					</li>
+					<li>
+						<p><strong>Patterns on shapes</strong> - Some polygons have scale patterns on them (for example,
+							India , China, European Union), while others do not. There is no explanation to understand
+							how the countries with scale patterns are related to each other.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	</div>
+
+
+	<div class="row">
+
+		<div class="col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
+			<div class="chart-des">
+				<h4> </h4>
+				<h3>Comparability is difficult</h3>
+				<p> It is hard to compare the size of similarly sized polygons as there is no consistent shape. There is
+					a wide range of shapes - some polygons can have 4 sizes (e.g., United States) while others have 12
+					(Brazil).</p>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="row">
+
+		<div class="col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+			<div class="chart-des">
+				<h4>Suggestions to improve</h4>
+				<h3>Encoding of fertility rate data</h3>
+				<p><strong>1. Bin the fertility rate into more useful, mutually exclusive and exhaustive
+						categories:</strong> <br>
+					It is a commonly accepted fact that the replacement fertility rate needed to maintain a country's
+					population size is 2.1 children per female,
+					and any country with a fertility rate below this is expected to enter population decline over time.
+					The creator could consider just using a 3-point discrete colour scale: </p>
+				<ol>
+					<li>
+						<p>Population growing: >=2.1 children per female</p>
+					</li>
+					<li>
+						<p>Stable population: 2.1 children per female</p>
+					</li>
+					<li>
+						<p>Population in decline: 2.1 children per female</p>
+					</li>
+				</ol>
+				<p><strong>2. Use a continous colour scale for fertility rate:</strong> <br>
+					Instead of the first suggestion, the creator could also use a continuous colour scale to express
+					ascending fertility rates across countries e.g., in terms of ascending colour saturation.
+				</p>
+				<p><strong>3. Consider a different visualisation to present population change rates across countries</strong> <br>
+					The creator could have subtracted the crude death rate from the crude birth rate to obtain the population change rate in the absence of migrations. 
+					As the obtained population change rate would be a continuous data type, the creator could consider a chloropeth map to show population change rate per country in terms of colour saturation.
+				</p>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
+			<div class="chart-des">
+				<h4></h4>
+				<h3>Remove redundant channels</h3>
+				<p>The creator can consider removing the redundant channels from the current visualisation, in accordance with the expressiveness principle as earlier mentioned.</p>
+				
+				<p>The visualisation should only have a <strong>single channel</strong> encoding each dataset:</p>
+				<ul>
+					<li>
+						<p>Total population size per country (treated as ratio data), encoded as a single channel such as area magnitude or position. If an overall globe shape is still desired by the creator, 
+							perhaps the creator could try to keep the shape of each polygon representing each country consistent (e.g., circle), while using purely an area magnitude channel. 
+						</p>
+					</li>
+					<li>
+						<p>Fertility rate per country, which the author can encode as a discrete or continuous colour scale (see "Encoding of fertility rate data" on left). For example, higher fertility rate can be expressed as higher colour saturation.</p>
+					</li></ul>
+					<p>There should be no patterns on some polygons, unless the patterns are encoding another dataset and represent a relationship between polygons with patterns.</p>
+				
+
+
+			</div>
+		</div>
+
+	</div>
+
+	</div>
+</section>
+
+<div class="text-center">
+	<p><a href="#">Back to Top</a></p>
+</div>
+
+
+</section>
+
+<!-- Footer section
+================================================== -->
+<footer>
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+				<h2>About</h2>
+				<p>Submitted as part of an assignment for the 02.526 Interactive Data Visualisation elective in
+					SUTD.<br>
+					By <strong>Alice Lee</strong> | <a href="https://lenezoe.github.io/" target="_blank">Other
+						Assignments</a> | <a href="https://chi-loong.github.io/HASS02.526/" target="_blank">Class
+						Page</a>
+				</p>
+			</div>
+
+		</div>
+	</div>
+
+</footer>
+
+<!-- Javascript 
+================================================== -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/jquery.nav.js"></script>
+<script src="js/jquery.parallax.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/counter.js"></script>
+<script src="js/custom.js"></script>
+</body>
+
+</html>
