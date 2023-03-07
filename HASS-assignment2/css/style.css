@@ -32,7 +32,7 @@ h2 {
 }
 
 h3 {
-  color: #ffa400;
+  color: #03a285;
   font-size: 16px;
   letter-spacing: 26px;
   letter-spacing: 2px;
@@ -84,7 +84,7 @@ p {
 }
 
 #home .btn:hover {
-  background: #ffa400;
+  background: #03a285;
 }
 
 
@@ -141,7 +141,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #ffa400;
+  color: #03a285;
   text-decoration: none;
 }
 
