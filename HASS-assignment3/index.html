@@ -19,27 +19,29 @@
 	<div class="container d-flex justify-content-center d-flex align-items-center">
 		<div class="row">
 
-				<h1>The Value of HDB Lease Decay</h1>
-				<p>All HDB flats built in Singapore have a 99-year or shorter leasehold.
-					There has been much public debate over the value of HDB flats as retirement or depreciating
-					assets [Examples: <a
-						href="https://mothership.sg/2023/02/housing-debate-parliament-xie-yao-quan-leon-perera-2023/"
-						target="_blank">1</a>,
-					<a href="https://www.propertyguru.com.sg/property-guides/decaying-hdb-lease-myth-reality-20946"
-						target="_blank">2</a>,
-					<a href="https://www.asiaone.com/singapore/question-time-great-hdb-lease-decay-debate"
-						target="_blank">3</a>]. </p><p> 
-						Does the remaining lease period of HDB flats really have a strong influence on their resale prices?
-				In the following visualisations (grouped scatter plots), I explore the <strong>relationship between 
-					remaining flat leases and average resale flat prices </strong>, in <strong>mature and non-mature towns</strong>. I am also interested in the changes in 
+			<h1>The Value of HDB Lease Decay</h1>
+			<p>All HDB flats built in Singapore have a 99-year or shorter leasehold.
+				There has been much public debate over the value of HDB flats as retirement or depreciating
+				assets [Examples: <a
+					href="https://mothership.sg/2023/02/housing-debate-parliament-xie-yao-quan-leon-perera-2023/"
+					target="_blank">1</a>,
+				<a href="https://www.propertyguru.com.sg/property-guides/decaying-hdb-lease-myth-reality-20946"
+					target="_blank">2</a>,
+				<a href="https://www.asiaone.com/singapore/question-time-great-hdb-lease-decay-debate"
+					target="_blank">3</a>].
+			</p>
+			<p>
+				Does the remaining lease period of HDB flats really have a strong influence on their resale prices?
+				In the following visualisations (grouped scatter plots), I explore the <strong>relationship between
+					remaining flat leases and average resale flat prices </strong>, in <strong>mature and non-mature
+					towns</strong>. I am also interested in the changes in
 				this relationship for <strong>different flat types</strong>.</p>
-				<p></p>
+			<p></p>
 
-				<h4>Sale of Resale HDB Flats in <i>Mature</i> Estates</h4>
-				<p>(Ang Mo Kio, Bedok, Bishan, Bukit Merah, Bukit Timah, Central, Clementi,
-					Geylang, Kallang/Whampoa, Marine Parade, Pasir Ris, Queenstown, Serangoon, Tampines, Toa Payoh)</p>
-					<header class="text-center col-12">
-
+			<h4>Sale of Resale HDB Flats in <i>Mature</i> Estates</h4>
+			<p>(Ang Mo Kio, Bedok, Bishan, Bukit Merah, Bukit Timah, Central, Clementi,
+				Geylang, Kallang/Whampoa, Marine Parade, Pasir Ris, Queenstown, Serangoon, Tampines, Toa Payoh)</p>
+			<header class="text-center col-12">
 				<!-- Scatterplot 1 -->
 				<svg id="scatterplot"></svg>
 
@@ -51,19 +53,20 @@
 					<li class="legend-btn" data-flat_type="4 ROOM"><span class="legend-symbol"></span> 4 ROOM</li>
 					<li class="legend-btn" data-flat_type="5 ROOM"><span class="legend-symbol"></span> 5 ROOM</li>
 					<li class="legend-btn" data-flat_type="EXECUTIVE"><span class="legend-symbol"></span> EXECUTIVE</li>
-					<li class="legend-btn" data-flat_type="MULTI-GENERATION"><span class="legend-symbol"></span> MULTI-GENERATION</li>
+					<li class="legend-btn" data-flat_type="MULTI-GENERATION"><span class="legend-symbol"></span>
+						MULTI-GENERATION</li>
 				</ul>
 				<div id="tooltip"></div>
 
 				<p></p>
 			</header>
-				<!-- Scatterplot 2 -->
-				<h4>Sale of Resale HDB Flats in <i>Non-mature</i> Estates</h4>
-				<p>(Bukit Batok, Bukit Panjang, Choa Chu Kang, Hougang, Jurong East, Jurong West, Punggol, Sembawang, 
-					Sengkang, Woodlands, Yishun)
-				</p>
-				<header class="text-center col-12">
 
+			<h4>Sale of Resale HDB Flats in <i>Non-mature</i> Estates</h4>
+			<p>(Bukit Batok, Bukit Panjang, Choa Chu Kang, Hougang, Jurong East, Jurong West, Punggol, Sembawang,
+				Sengkang, Woodlands, Yishun)
+			</p>
+			<header class="text-center col-12">
+			<!-- Scatterplot 2 -->
 				<svg id="scatterplot2"></svg>
 
 				<ul class="legend2">
@@ -75,18 +78,19 @@
 					<li class="legend2-btn" data-flat_type="5 ROOM"><span class="legend2-symbol"></span> 5 ROOM</li>
 					<li class="legend2-btn" data-flat_type="EXECUTIVE"><span class="legend2-symbol"></span> EXECUTIVE
 					</li>
-					<li class="legend2-btn" data-flat_type="MULTI-GENERATION"><span class="legend-symbol"></span> MULTI-GENERATION</li>
+					<li class="legend2-btn" data-flat_type="MULTI-GENERATION"><span class="legend-symbol"></span>
+						MULTI-GENERATION</li>
 				</ul>
 				<div id="tooltip"></div>
-</header>
-				<!-- Footer -->
-				<div class="footer">
+			</header>
+			<!-- Footer -->
+			<div class="footer">
 
-					Created by <a href="https://lenezoe.github.io/" target="_blank">Alice Lee</a> |
-					<a href="https://data.gov.sg/dataset/resale-flat-prices" target="_blank">Data Source</a> |
-					<a href="https://chi-loong.github.io/HASS02.526/" target="_blank">Class Page</a>
+				Created by <a href="https://lenezoe.github.io/" target="_blank">Alice Lee</a> |
+				<a href="https://data.gov.sg/dataset/resale-flat-prices" target="_blank">Data Source</a> |
+				<a href="https://chi-loong.github.io/HASS02.526/" target="_blank">Class Page</a>
 
-				</div>
+			</div>
 
 		</div>
 
