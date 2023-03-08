@@ -23,14 +23,6 @@ h4 {
   font-weight: 600;
 }
 
-.source {
-  font-size: 10px;
-  color: #888;
-}
-.source a {
-  color: #888;
-}
-
 /* Marks */
 .point:hover {
   stroke: #333;
@@ -186,8 +178,6 @@ h4 {
   padding-left: 20px;
   text-align:left;
 }
-
-
 .footer {
   padding:5px;
   width:100%;
