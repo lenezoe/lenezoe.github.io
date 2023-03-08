@@ -206,3 +206,9 @@ a:hover {
 	color: 	#151e23;
 }
 
+@media screen and (max-width: 768px) {
+  body {
+    margin-left: 0;
+    padding-left: 400px;
+  }
+}
