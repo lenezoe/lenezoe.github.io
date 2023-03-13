@@ -4,15 +4,15 @@ class Scatterplot2 {
    * @param {Object}
    * @param {Array}
    */
-  constructor(_config, _data) {
+  constructor(_config2, _data2) {
     this.config = {
-      parentElement: _config.parentElement,
-      containerWidth: _config.containerWidth || 550,
-      containerHeight: _config.containerHeight || 480,
-      margin: _config.margin || { top: 45, right: 20, bottom: 20, left: 75 },
-      tooltipPadding: _config.tooltipPadding || 15,
+      parentElement: _config2.parentElement,
+      containerWidth: _config2.containerWidth || 550,
+      containerHeight: _config2.containerHeight || 480,
+      margin: _config2.margin || { top: 45, right: 20, bottom: 20, left: 75 },
+      tooltipPadding: _config2.tooltipPadding || 15,
     };
-    this.data = _data;
+    this.data = _data2;
     this.initvis2();
   }
 
@@ -187,8 +187,8 @@ class Scatterplot2 {
  */
 let data2, scatterplot2;
 d3.csv('meanflatprices_nonmature2022.csv')
-  .then(_data => {
-    data2 = _data;
+  .then(_data2 => {
+    data2 = _data2;
     data.forEach(d => {
       d.resale_price = +d.resale_price;
       d.remain_leaseyears = +d.remain_leaseyears;
