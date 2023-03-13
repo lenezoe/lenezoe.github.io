@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Analysis of HDB Resale Flat Prices - 02.526 Assignment 3</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description"
+		content="Analysis of resale HDB flat prices, submitted as part of an assignment for the 02.526 Interactive Data Visualisation elective in SUTD.">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<link href="style.css" rel="stylesheet">
+	
+</head>
+
+<body>
+	<div class="container d-flex justify-content-center d-flex align-items-center">
+		<div class="row">
+
+			<h1>The Value of HDB Lease Decay</h1>
+			<p>All HDB flats built in Singapore have a 99-year or shorter leasehold.
+				There has been much public debate over the value of HDB flats as retirement or depreciating
+				assets [Examples: <a
+					href="https://mothership.sg/2023/02/housing-debate-parliament-xie-yao-quan-leon-perera-2023/"
+					target="_blank">1</a>,
+				<a href="https://www.propertyguru.com.sg/property-guides/decaying-hdb-lease-myth-reality-20946"
+					target="_blank">2</a>,
+				<a href="https://www.asiaone.com/singapore/question-time-great-hdb-lease-decay-debate"
+					target="_blank">3</a>].
+			</p>
+			<p>
+				Does the remaining lease period of HDB flats really have a strong influence on their resale prices?
+				In the following visualisations (grouped scatter plots), I explore the <strong>relationship between
+					remaining flat leases and average resale flat prices</strong>, in <strong>mature and non-mature
+					towns</strong>. I am also interested in the influence of remaining flat lease on average resale flat prices between <strong>different flat types</strong> (coloured clusters).</p>
+			<p></p>
+			<div class="col-md-6 col-sm-12">
+
+			<h4>HDB Resale Flat Prices in <span class="hovertext" data-hover="Ang Mo Kio, Bedok, Bishan, Bukit Merah, Bukit Timah, Central, Clementi,
+				Geylang, Kallang/Whampoa, Marine Parade, Pasir Ris, Queenstown, Serangoon, Tampines, Toa Payoh"><i>Mature</i> Estates</span></h4>
+			<p></p>
+				<!-- Scatterplot 1 -->
+				<ul class="legend">
+					Select Flat Type to Show:
+					<li class="legend-btn" data-flat_type="1 ROOM"><span class="legend-symbol"></span> 1 ROOM</li>
+					<li class="legend-btn" data-flat_type="2 ROOM"><span class="legend-symbol"></span> 2 ROOM</li>
+					<li class="legend-btn" data-flat_type="3 ROOM"><span class="legend-symbol"></span> 3 ROOM</li>
+					<li class="legend-btn" data-flat_type="4 ROOM"><span class="legend-symbol"></span> 4 ROOM</li>
+					<li class="legend-btn" data-flat_type="5 ROOM"><span class="legend-symbol"></span> 5 ROOM</li>
+					<li class="legend-btn" data-flat_type="EXECUTIVE"><span class="legend-symbol"></span> EXECUTIVE</li>
+					<li class="legend-btn" data-flat_type="MULTI-GENERATION"><span class="legend-symbol"></span>
+						MULTI-GENERATION</li>
+				</ul>
+				<div id="tooltip"></div>
+				<p></p>
+				<svg id="scatterplot"></svg>
+
+
+</div>
+<div class="col-md-6 col-sm-12">
+
+			<h4>HDB Resale Flat Prices in <span class="hovertext" data-hover="Bukit Batok, Bukit Panjang, Choa Chu Kang, Hougang, Jurong East, Jurong West, Punggol, Sembawang,
+				Sengkang, Woodlands, Yishun"><i>Non-mature</i> Estates</span></h4></h4>
+			<p>
+			</p>
+			<!-- Scatterplot 2 -->
+			<ul class="legend2">
+				Select Flat Type to Show:
+				<li class="legend2-btn" data-flat_type="2 ROOM"><span class="legend2-symbol"></span> 2 ROOM</li>
+				<li class="legend2-btn" data-flat_type="3 ROOM"><span class="legend2-symbol"></span> 3 ROOM</li>
+				<li class="legend2-btn" data-flat_type="4 ROOM"><span class="legend2-symbol"></span> 4 ROOM</li>
+				<li class="legend2-btn" data-flat_type="5 ROOM"><span class="legend2-symbol"></span> 5 ROOM</li>
+				<li class="legend2-btn" data-flat_type="EXECUTIVE"><span class="legend2-symbol"></span> EXECUTIVE
+				</li>
+				<li class="legend2-btn" data-flat_type="MULTI-GENERATION"><span class="legend-symbol"></span>
+					MULTI-GENERATION</li>
+			</ul>
+			<div id="tooltip"></div>
+			<p></p>
+				<svg id="scatterplot2"></svg>
+
+
+		</div>
+			<!-- Footer -->
+			<div class="footer"><p></p>
+				Submitted as an assignment for the 02.526 Interactive Data Visualisation elective in SUTD.<br>
+				By <a href="https://lenezoe.github.io/" target="_blank">Alice Lee</a> with <a href="https://d3-graph-gallery.com/graph/scatter_grouped.html" target="_blank">d3.js</a> |
+				<a href="https://data.gov.sg/dataset/resale-flat-prices" target="_blank">Data Source</a> |
+				<a href="https://chi-loong.github.io/HASS02.526/" target="_blank">Class Page</a>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<script src="js/d3.v6.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/main_2.js"></script>
+</body>
+
+</html>

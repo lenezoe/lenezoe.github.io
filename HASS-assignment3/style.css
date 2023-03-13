@@ -1,0 +1,233 @@
+
+body,
+html {
+  font-family: 'Montserrat', sans-serif;
+  background-color: 	#fff4e9;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color:#151e23;
+  font-size: .95rem;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+h4 {
+  font-size: 1.2rem;
+  text-align:left;
+  font-weight: 600;
+}
+/* Hover Text */
+.hovertext {
+  position: relative;
+  border-bottom: 1px dotted black;
+}
+
+.hovertext:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  transition: opacity 1s ease-in-out;
+
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 110%;
+}
+
+.hovertext:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+/* Marks */
+.point:hover {
+  stroke: #333;
+}
+
+/* Axes */
+.axis line {
+  fill: none;
+  stroke: #ddd;
+  shape-rendering: crispEdges;
+}
+.axis text {
+  font-size: 13px;
+  fill: #6b6b6b;
+}
+.axis-title {
+  font-size: 13px;
+  fill: #888;
+}
+.y-axis .tick:first-child line {
+  stroke: #b1b1b1;
+}
+.y-axis .tick:first-child text {
+  display: none;
+}
+.x-axis .tick:first-child line {
+  display: none;
+}
+.axis path {
+  display: none;
+}
+
+/* Legend */
+.legend {
+  margin: 20px 0;
+  list-style: none;
+  padding: 0;
+}
+.legend-btn {
+  display: inline-block;
+  margin: 0 0px 0 0;
+  cursor: pointer;
+  background-color: #052f2c;
+  color:#ffffff;
+  padding: 5px;
+}
+.legend-btn:hover.legend-btn.inactive:hover  {
+  opacity: 0.5;
+}
+.legend-btn.inactive {
+  opacity: 0.3;
+}
+.legend-symbol {
+  width: 12px;
+  height: 12px;
+  margin-right: 3px;
+  display: inline-block;
+}
+.legend-btn[data-flat_type="1 ROOM"] .legend-symbol {
+  background: #4e79a7;
+}
+.legend-btn[data-flat_type="2 ROOM"] .legend-symbol {
+  background: #f28e2c;
+}
+.legend-btn[data-flat_type="3 ROOM"] .legend-symbol {
+  background: #e15759;
+}
+
+.legend-btn[data-flat_type="4 ROOM"] .legend-symbol {
+  background: #76b7b2;
+}
+.legend-btn[data-flat_type="5 ROOM"] .legend-symbol {
+  background: #59a14f;
+}
+.legend-btn[data-flat_type="EXECUTIVE"] .legend-symbol {
+  background: #edc949;
+}
+
+.legend-btn[data-flat_type="MULTI-GENERATION"] .legend-symbol {
+  background: #af7aa1;
+}
+
+/* legend2 */
+.legend2 {
+  margin: 20px 0;
+  list-style: none;
+  padding: 0;
+}
+.legend2-btn {
+  display: inline-block;
+  margin: 0 0px 0 0;
+  cursor: pointer;
+  background-color: #052f2c;
+  color:#ffffff;
+  padding: 5px;
+}
+.legend2-btn:hover.legend2-btn.inactive:hover  {
+  opacity: 0.5;
+}
+.legend2-btn.inactive {
+  opacity: 0.3;
+}
+.legend2-symbol {
+  width: 12px;
+  height: 12px;
+  margin-right: 3px;
+  display: inline-block;
+}
+.legend2-btn[data-flat_type="1 ROOM"] .legend2-symbol {
+  background: #4e79a7;
+}
+.legend2-btn[data-flat_type="2 ROOM"] .legend2-symbol {
+  background: #f28e2c;
+}
+.legend2-btn[data-flat_type="3 ROOM"] .legend2-symbol {
+  background: #e15759;
+}
+
+.legend2-btn[data-flat_type="4 ROOM"] .legend2-symbol {
+  background: #76b7b2;
+}
+.legend2-btn[data-flat_type="5 ROOM"] .legend2-symbol {
+  background: #59a14f;
+}
+.legend2-btn[data-flat_type="EXECUTIVE"] .legend2-symbol {
+  background: #edc949;
+}
+
+.legend2-btn[data-flat_type="MULTI-GENERATION"] .legend-symbol {
+  background: #af7aa1;
+}
+
+/* Tooltip */
+#tooltip {
+  position: absolute;
+  display: none;
+  background: #fff;
+  box-shadow: 3px 3px 3px 0px rgb(92 92 92 / 0.5);
+  border: 1px solid #ddd;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px;
+  min-width: 160px;
+  color: #333;
+}
+.tooltip-title {
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+}
+#tooltip ul {
+  margin: 5px 0 0 0;
+  padding-left: 20px;
+  text-align:left;
+}
+
+
+.footer {
+  padding:5px;
+  width:100%;
+  text-align: center;
+}
+
+a {
+  text-decoration: underline;
+  font-weight: 600;
+	color: 	#151e23;
+}
+
+a:hover {
+  text-decoration: none;
+  font-weight: 600;
+	color: 	#151e23;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    margin-left: 0;
+    padding-left: 400px;
+  }
+}
