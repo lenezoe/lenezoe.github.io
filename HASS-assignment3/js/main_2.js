@@ -13,27 +13,27 @@ class Scatterplot2 {
       tooltipPadding: _config.tooltipPadding || 15,
     };
     this.data = _data;
-    this.initVis();
+    this.initvis2();
   }
 
   /**
    * We initialize scales/axes and append static elements, such as axis titles.
    */
-  initVis() {
-    let vis = this;
+  initvis2() {
+    let vis2 = this;
 
     // Calculate inner chart size. Margin specifies the space around the actual chart.
-    vis.width =
-      vis.config.containerWidth -
-      vis.config.margin.left -
-      vis.config.margin.right;
-    vis.height =
-      vis.config.containerHeight -
-      vis.config.margin.top -
-      vis.config.margin.bottom;
+    vis2.width =
+      vis2.config.containerWidth -
+      vis2.config.margin.left -
+      vis2.config.margin.right;
+    vis2.height =
+      vis2.config.containerHeight -
+      vis2.config.margin.top -
+      vis2.config.margin.bottom;
 
     // Initialize scales
-    vis.colorScale = d3
+    vis2.colorScale = d3
       .scaleOrdinal()
       .range([
         "#4e79a7",
@@ -57,59 +57,59 @@ class Scatterplot2 {
         "MULTI-GENERATION",
       ]);
 
-    vis.xScale = d3.scaleLinear().range([0, vis.width]);
+    vis2.xScale = d3.scaleLinear().range([0, vis2.width]);
 
-    vis.yScale = d3.scaleLinear().range([vis.height, 0]);
+    vis2.yScale = d3.scaleLinear().range([vis2.height, 0]);
 
     // Initialize axes
-    vis.xAxis = d3
-      .axisBottom(vis.xScale)
+    vis2.xAxis = d3
+      .axisBottom(vis2.xScale)
       .ticks(8)
-      .tickSize(-vis.height - 10)
+      .tickSize(-vis2.height - 10)
       .tickPadding(10)
       .tickFormat((d) => d + " Y");
 
-    vis.yAxis = d3
-      .axisLeft(vis.yScale)
+    vis2.yAxis = d3
+      .axisLeft(vis2.yScale)
       .ticks(8)
-      .tickSize(-vis.width - 10)
+      .tickSize(-vis2.width - 10)
       .tickPadding(10);
 
     // Define size of SVG drawing area
-    vis.svg = d3
-      .select(vis.config.parentElement)
-      .attr("width", vis.config.containerWidth)
-      .attr("height", vis.config.containerHeight);
+    vis2.svg = d3
+      .select(vis2.config.parentElement)
+      .attr("width", vis2.config.containerWidth)
+      .attr("height", vis2.config.containerHeight);
 
     // Append group element that will contain our actual chart
     // and position it according to the given margin config
-    vis.chart = vis.svg
+    vis2.chart = vis2.svg
       .append("g")
       .attr(
         "transform",
-        `translate(${vis.config.margin.left},${vis.config.margin.top})`
+        `translate(${vis2.config.margin.left},${vis2.config.margin.top})`
       );
 
     // Append empty x-axis group and move it to the bottom of the chart
-    vis.xAxisG = vis.chart
+    vis2.xAxisG = vis2.chart
       .append("g")
       .attr("class", "axis x-axis")
-      .attr("transform", `translate(0,${vis.height})`);
+      .attr("transform", `translate(0,${vis2.height})`);
 
     // Append y-axis group
-    vis.yAxisG = vis.chart.append("g").attr("class", "axis y-axis");
+    vis2.yAxisG = vis2.chart.append("g").attr("class", "axis y-axis");
 
     // Append both axis titles
-    vis.chart
+    vis2.chart
       .append("text")
       .attr("class", "axis-title")
-      .attr("y", vis.height - 15)
-      .attr("x", vis.width + 10)
+      .attr("y", vis2.height - 15)
+      .attr("x", vis2.width + 10)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
       .text("Remaining Lease (nearest year)");
 
-    vis.svg
+    vis2.svg
       .append("text")
       .attr("class", "axis-title")
       .attr("x", 0)
@@ -121,37 +121,37 @@ class Scatterplot2 {
   /**
    * Prepare the data and scales before we render it.
    */
-  updateVis() {
-    let vis = this;
+  updatevis2() {
+    let vis2 = this;
 
     // Specificy accessor functions
-    vis.colorValue = (d) => d.flat_type;
-    vis.xValue = (d) => d.remain_leaseyears;
-    vis.yValue = (d) => d.resale_price;
+    vis2.colorValue = (d) => d.flat_type;
+    vis2.xValue = (d) => d.remain_leaseyears;
+    vis2.yValue = (d) => d.resale_price;
 
     // Set the scale input domains
-    vis.xScale.domain([d3.max(vis.data, vis.xValue), 0]);
-    vis.yScale.domain([0, 1300000]);
+    vis2.xScale.domain([d3.max(vis2.data, vis2.xValue), 0]);
+    vis2.yScale.domain([0, 1300000]);
 
-    vis.renderVis();
+    vis2.rendervis2();
   }
 
   /**
-   * Bind data to visual elements.
+   * Bind data to vis2ual elements.
    */
-  renderVis() {
-    let vis = this;
+  rendervis2() {
+    let vis2 = this;
 
     // Add circles
-    const circles = vis.chart
+    const circles = vis2.chart
       .selectAll(".point")
-      .data(vis.data, (d) => d.trail)
+      .data(vis2.data, (d) => d.trail)
       .join("circle")
       .attr("class", "point")
       .attr("r", 4)
-      .attr("cy", (d) => vis.yScale(vis.yValue(d)))
-      .attr("cx", (d) => vis.xScale(vis.xValue(d)))
-      .attr("fill", (d) => vis.colorScale(vis.colorValue(d)));
+      .attr("cy", (d) => vis2.yScale(vis2.yValue(d)))
+      .attr("cx", (d) => vis2.xScale(vis2.xValue(d)))
+      .attr("fill", (d) => vis2.colorScale(vis2.colorValue(d)));
 
     // Tooltip event listeners
     circles
@@ -159,8 +159,8 @@ class Scatterplot2 {
         d3
           .select("#tooltip")
           .style("display", "block")
-          .style("left", event.pageX + vis.config.tooltipPadding + "px")
-          .style("top", event.pageY + vis.config.tooltipPadding + "px").html(`
+          .style("left", event.pageX + vis2.config.tooltipPadding + "px")
+          .style("top", event.pageY + vis2.config.tooltipPadding + "px").html(`
               <div class="tooltip-title">${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'SGD', minimumFractionDigits: 0 }).format(d.resale_price)}</div>
               
               <ul>
@@ -176,9 +176,9 @@ class Scatterplot2 {
 
     // Update the axes/gridlines
     // We use the second .call() to remove the axis and just show gridlines
-    vis.xAxisG.call(vis.xAxis).call((g) => g.select(".domain").remove());
+    vis2.xAxisG.call(vis2.xAxis).call((g) => g.select(".domain").remove());
 
-    vis.yAxisG.call(vis.yAxis).call((g) => g.select(".domain").remove());
+    vis2.yAxisG.call(vis2.yAxis).call((g) => g.select(".domain").remove());
   }
 }
 
@@ -195,7 +195,7 @@ d3.csv('meanflatprices_nonmature2022.csv')
     });
     
     scatterplot2 = new Scatterplot2({ parentElement: '#scatterplot2'}, data2);
-    scatterplot2.updateVis();
+    scatterplot2.updatevis2();
   })
   .catch(error => console.error(error));
 
@@ -213,8 +213,8 @@ d3.selectAll('.legend2-btn').on('click', function() {
     selectedflat_type.push(d3.select(this).attr('data-flat_type'));
   });
 
-  // Filter data accordingly and update vis
+  // Filter data accordingly and update vis2
   scatterplot2.data = data2.filter(d => selectedflat_type.includes(d.flat_type));
-  scatterplot2.updateVis();
+  scatterplot2.updatevis2();
 });
 
