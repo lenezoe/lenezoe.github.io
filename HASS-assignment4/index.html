@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Singapore Population Density Choropleth Map - 02.526 Assignment 4</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description"
+		content="Choropleth map visualisation of Singapore's population, submitted as part of an assignment for the 02.526 Interactive Data Visualisation elective in SUTD.">
+	<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+	<h1>Singapore Population Density Choropleth Map</h1>
+	In 2022, Jurong West Central subzone has the highest population density in Singapore.
+	<svg></svg>
+	<div class="tooltip tooltip-subzone"></div>
+	<div class="tooltip tooltip-population"></div>
+	<div class="tooltip tooltip-area"></div>
+	<div class="tooltip tooltip-density"></div>
+
+	<!-- Footer -->
+	<div class="footer">
+		<p></p>
+		Submitted as an assignment for the 02.526 Interactive Data Visualisation elective in SUTD.<br>
+		By <a href="https://lenezoe.github.io/" target="_blank">Alice Lee</a> with <a
+			href="https://d3-graph-gallery.com/graph/scatter_grouped.html" target="_blank">d3.js</a> |
+		Data sources:
+		<a href="https://www.singstat.gov.sg/publications/population/population-trends" target="_blank">Population
+			2022</a>,
+		<a href="https://data.gov.sg/dataset/master-plan-2019-subzone-boundary-no-sea" target="_blank">Subzone Shape</a>
+		|
+		<a href="https://chi-loong.github.io/HASS02.526/" target="_blank">Class Page</a>
+
+	</div>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+
+	<script>
+
+		// define dimensions of SVG
+		let w = 950, h = 500;
+
+		// define d3 selection
+		let svg = d3.select("svg")
+			.attr("viewBox", `0 0 ${w} ${h}`); //start upper left corner, and set width and height to w and h
+
+		// Load external data and boot
+		Promise.all([d3.json("sgmap.json"), d3.csv("population2022.csv")]).then(data => {
+
+			let mapData = data[0].features;
+			let popData = data[1];
+			let min = 0, max = 0;
+
+			// Merge pop data with map data
+			mapData.forEach(d => {
+				let subzone = popData.find(e => e.Subzone.toUpperCase() == d.properties.Name);
+				d.popdata = (subzone != undefined) ? parseInt(subzone.Population) : 0;
+
+				// Create field called "population density" by dividing pop over square area
+				d.properties.Density = parseFloat(d.popdata) / parseFloat(d.properties.SHAPE_Area);
+				// update maximum value
+				if (parseFloat(d.properties.Density) > max) {
+					max = d.properties.Density;
+				}
+
+				// // Rename Tengeh to Tengah if the name changes
+				// if (d.properties["Subzone Name"] == "TENGEH") {
+				// 	d.properties["Subzone Name"] = "TENGAH";
+				// }
+			})
+
+			console.log(mapData);
+
+			// Map and projection
+			let projection = d3.geoMercator()
+				.center([103.851959, 1.290270])
+				.fitExtent([[20, 20], [980, 580]], data[0]);
+
+			let geopath = d3.geoPath().projection(projection);
+
+			// define scale
+			let colorscale = d3.scaleSequential()
+				.domain([max, min])
+				.range([1, 0]);
+
+
+			// draw map
+			svg.append("g")
+				.attr("id", "districts") //new "g" element will be given an "id" attribute of "districts".
+				.selectAll("path") //select all paths in "districts" grp
+				.data(mapData) //binds "mapData.features" data array to the empty selection
+				.enter() //enters the data into the selection, 
+				.append("path") // creating a new "path" element for each item in the "mapData.features" array
+				.attr("d", geopath) // sets the "d" attribute of each new "path" element to a variable called "geopath". This attribute defines the shape of the path.
+				.attr("id", d => d.properties["Subzone Name"]) // sets the "id" attribute of each new "path" element to the value of the "Subzone Name" property of the corresponding data item
+				.attr("fill", d => d3.interpolateRdPu(colorscale(d.properties.Density))) //sets the "fill" attribute of each new "path" element to a color that corresponds to the population density of the subzone
+				.on("mouseover", (event, d) => { //adds a "mouseover" event listener to each new "path" element.
+					d3.select(".tooltip-subzone")
+						.text(`Subzone: ${d.properties["Subzone Name"]} `)
+						.style("left", (event.pageX) + "px")
+						.style("top", (event.pageY) + "px");
+					d3.select(".tooltip-population")
+						.text(`Population: ${parseInt(d.popdata).toLocaleString('en-US')} residents`)
+						.style("left", (event.pageX) + "px")
+						.style("top", (event.pageY) + "px")
+						.style("translate", "0 1.2em");
+					d3.select(".tooltip-area")
+						.text(`Area: ${parseFloat(d.properties["SHAPE_Area"] / 1e6).toLocaleString('en-US')} sq km `)
+						.style("left", (event.pageX) + "px")
+						.style("top", (event.pageY) + "px")
+						.style("translate", "0 2.4em");
+					d3.select(".tooltip-density")
+						.text(`Density: ${((d.properties.Density).toFixed(6) * 1e6).toLocaleString('en-US')} residents/sq km `)
+						.style("left", (event.pageX) + "px")
+						.style("top", (event.pageY) + "px")
+						.style("translate", "0 3.6em");
+					d3.select(".tooltip-planningArea")
+						.text(`Planning Area: ${d.properties["Region Name"]} `)
+						.style("left", (event.pageX) + "px")
+						.style("top", (event.pageY) + "px")
+						.style("translate", "0 4.8em");
+					d3.select(event.currentTarget)
+						.attr("stroke", "var(--strk)")
+						.attr("stroke-width", "2")
+						.attr("fill-opacity", "1.0");
+					// event.currentTarget returns the original data.features
+				})
+
+				// reset animations on mouseout
+				.on("mouseout", (event, d) => {
+					d3.select(".tooltip-subzone")
+						.text("");
+					d3.select(".tooltip-population")
+						.text("");
+					d3.select(".tooltip-area")
+						.text("");
+					d3.select(".tooltip-density")
+						.text("");
+					d3.select(".tooltip-planningArea")
+						.text("");
+					d3.select(event.currentTarget)
+						.attr("stroke", "var(--strk)")
+						.attr("stroke-width", "0.9")
+						.attr("fill-opacity", "0.8");
+				});
+
+			// Define legend title
+			let legendname = [
+				{
+					label: "Population Density (residents per sq km)"
+				}
+			];
+			// Define the colour scale legend
+			let keys = [
+				{
+					value: max,
+					ord: 1
+				},
+				{
+					value: max * 6 / 7,
+					ord: 2
+				},
+				{
+					value: max * 5 / 7,
+					ord: 3
+				},
+				{
+					value: max * 4 / 7,
+					ord: 5
+				},
+				{
+					value: max * 3 / 7,
+					ord: 6
+				},
+				{
+					value: max * 2 / 7,
+					ord: 7
+				},
+				{
+					value: min,
+					ord: 8
+				}
+			];
+
+			// Define the color scale labels. Shd have 1 more number than colour scale as there are 8 lines
+			let numkeys = [
+				{
+					value: max,
+					ord: 1
+				},
+				{
+					value: max * 7 / 8,
+					ord: 2
+				},
+				{
+					value: max * 6 / 8,
+					ord: 3
+				},
+				{
+					value: max * 5 / 8,
+					ord: 4
+				},
+				{
+					value: max * 4 / 8,
+					ord: 5
+				},
+				{
+					value: max * 3 / 8,
+					ord: 6
+				},
+				{
+					value: max * 2 / 8,
+					ord: 7
+				},
+				{
+					value: min,
+					ord: 8
+				}
+			];
+			// create legend section
+			let legend = svg.append("g")
+				.attr("transform", "translate(560,400)")
+				.attr("id", "legend")
+
+			legend.selectAll("rect")
+				.data(keys)
+				.enter()
+				.append("rect")
+				.attr("x", (d, i) => i * 45)
+				.attr("y", 10)
+				.attr("width", 45)
+				.attr("height", 20)
+				.attr("stroke", "var(--strk")
+				.attr("stroke-width", "0")
+				.attr("fill-opacity", "0.7")
+				.attr("fill", d => d3.interpolateRdPu(colorscale(d.value)));
+
+			legend.selectAll("text")
+				.data(legendname)
+				.enter()
+				.append("text")
+				.attr("transform", d => `translate(0,5)`)
+				.text(d => ` ${(d.label)} `)
+				.style("font-size", "13px")
+				.style("fill", "black")
+				.style("font-weight", "bold");
+
+			let legendval = svg.append("g")
+				.attr("transform", "translate(560,400)")
+				.attr("id", "legendval")
+
+			d3.select("#legendval")
+				.selectAll("text")
+				.data(numkeys)
+				.enter()
+				.append("text")
+				.attr("transform", d => `translate(${d.ord * 45 - 50},45)`)
+				.text(d => ` ${((d.value).toFixed(4) * 1e6).toLocaleString('en-US')} `)
+				.style("font-size", "11px");
+		})
+
+	</script>
+</body>
+
+</html>
