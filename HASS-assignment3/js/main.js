@@ -115,7 +115,7 @@ class Scatterplot {
       .attr("x", 0)
       .attr("y", 0)
       .attr("dy", ".71em")
-      .text("Average HDB Resale Price (SGD) in 2022");
+      .text("Median HDB Resale Price (SGD) in 2022");
   }
 
   /**
@@ -186,7 +186,7 @@ class Scatterplot {
  * Load data from CSV file asynchronously and render scatter plot
  */
 let data, scatterplot;
-d3.csv('meanflatprices_mature2022.csv')
+d3.csv('medianflatprices_mature2022.csv')
   .then(_data => {
     data = _data;
     data.forEach(d => {
