@@ -56,4 +56,9 @@ a:hover {
     margin-left: 0;
     padding: 10px;
   }
+
+
+  .tooltip {
+    font-size: .7rem;
+  }
 }
