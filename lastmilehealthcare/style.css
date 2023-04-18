@@ -3,36 +3,39 @@ html {
   --bg0: #F3F0EC;
   --fg0: #01256B;
   --strk: #A1240F;
+  --hder: #494847;
+  --axis: #533e23;
   margin: 0;
   background: var(--bg0);
   color: var(--fg0);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   padding: 10px;
-  text-align: center;
 }
 
 h1 {
+  text-align: center;
   font-size: 3rem;
   font-family: 'Indie Flower', cursive;
   color: var(--fg0);
+  font-weight:600;
+  padding:15px;
 }
 
 h2 {
+  text-align: center;
   font-size: 2rem;
   font-family: 'Indie Flower', cursive;
   color: var(--strk);
+  font-weight:600;
+  padding:15px;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: var(--fg0);
-}
-
-.footer {
-  padding: 5px;
-  width: 100%;
-  font-size: .9rem;
+  text-align:left;
+  font-weight:600;
 }
 
 a {
@@ -47,7 +50,115 @@ a:hover {
   color: var(--strk);
 }
 
+.smaller {
+  font-size: smaller;
+}
 
+.intro {
+  max-width: calc(100% - 100px);
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box {
+  border: 5px dotted var(--strk);
+  max-width: calc(100% - 100px);
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: calc(100% - 50px);
+  margin: 0 auto;
+}
+
+.header-wrapper {
+  font-size: 1.1rem;
+  color: var(--hder);
+  font-weight:700;
+  text-align:center;
+}
+
+/* leaflet map */
+
+#map {
+  height: 600px;
+  width: 100%;
+  position: relative;
+}
+
+.map-container {
+  filter: grayscale(40%);
+  -webkit-filter: grayscale(40%);
+}
+
+/* bar charts */
+
+.tooltip,.tooltip2 {
+  position: absolute;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+  text-align: left; 
+  pointer-events: none;
+}
+
+.bar {
+  position: relative;
+  fill: var(--fg0);
+}
+
+.bar:hover {
+  cursor: crosshair;
+}
+
+.bar::before {
+  content: attr(title);
+  position: absolute;
+  top: -1.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 0.5em;
+  background-color: #333;
+  color: #fff;
+  border-radius: 0.25em;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.bar:hover::before {
+  opacity: 1;
+}
+
+/* Slope chart */
+.axis text {
+  font-size: 13px;
+  fill: var(--axis);
+}
+
+.walking-distance-label {
+  font-size: 14px;
+  font-style: italic;
+  fill: var(--axis);
+}
+
+path:hover {
+  cursor: pointer;
+}
+
+/* Footer */
+
+.footer {
+  width: 100%;
+  font-size: .9rem;
+  text-align:center;
+}
 @media screen and (max-width: 768px) {
   body {
     margin-left: 0;

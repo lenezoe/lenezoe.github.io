@@ -1,33 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-
+	<title>Walk how far to see Doctor? - Public Transit Equity of Healthcare Access</title>
 	<meta charset="utf-8">
-	<title>Final Project Proposal - 02.526 Assignment 5</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description"
-		content="Proposal to visualise transportation equity of polyclinics, submitted as part of an assignment for the 02.526 Interactive Data Visualisation elective in SUTD.">
-		<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+		content="Transportation equity of healthcare in Singapore, submitted as part of an assignment for the 02.526 Interactive Data Visualisation elective in SUTD.">
+	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+	  integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+	  integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+	  <script src="https://d3js.org/d3.v7.min.js"></script>  
+	  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 	<link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-	<h1>Walk how far to see doctor?</h1>
-	<h2>Equity of transportation access to healthcare facilities in Singapore</h2>
-	<h3><a href="https://lenezoe.github.io/HASS-assignment5/HASS-assignment5.pdf">Link to Final Project Proposal</a></h3>
+	<div class="container">
+		
+		<div class="row align-items-center justify-content-center intro">
 
+			<h1>Walk how far to see doctor in Singapore?</h1>
 
-	<!-- Footer -->
-	<div class="footer">
-		<p></p>
-		Submitted as an assignment for the 02.526 Interactive Data Visualisation elective in SUTD.<br>
-		By <a href="https://lenezoe.github.io/" target="_blank">Alice Lee</a> | 
-		<a href="https://chi-loong.github.io/HASS02.526/" target="_blank">Class Page</a>
-
+	<p>By Alice Lee (1007346), SUTD MUSPP<br>April 2023</p>
 	</div>
-	
-</body>
+	  <div class="row align-items-center justify-content-center box">
+			<div class="col-lg-10">
+		<h3>What is this visualisation about?</h3>
+	<p>Singapore has an ageing population. An <strong>inclusive healthcare system</strong> would not only consider seniors' access to 
+	healthcare in terms of affordability, but also their <strong>mobility status</strong> and the <strong>last-mile walkability 
+	to healthcare facilities</strong>. </p>
 
+<p>Singapore's transportation system provides a comprehensive and wide range of options to access healthcare. 
+	However, public transportation system initiatives such as 
+	<a href="https://www.straitstimes.com/singapore/transport/plans-to-pare-down-bukit-panjang-bus-services-plying-along-downtown-line-irk" target="_blank">bus route modifications</a> or 
+	<a href="https://www.straitstimes.com/opinion/forum/forum-build-taxi-stand-outside-queenstown-polyclinic-and-community-centre" target="_blank">placement of transit nodes</a> can 
+	potentially become barriers to healthcare access for those with limited mobility.
+</p>
+<p>This visualisation explores whether accessibility to healthcare is inequitable depending on the public healthcare facilities* residents need to access, and 
+	the public transit mode they choose to access these facilities. </p>	
+	<p><em>* Includes polyclinics, restructured hospitals and community hospitals</em></p>
+
+</div>
+<div class="col-lg-2">
+	<img src="icons/senior1.png" alt="Elderly on walker with caregiver" class="img-fluid rounded float-end">
+
+</div>
+
+</div>
+<div class="row align-items-center justify-content-center intro">
+
+	<h2>Equity of public transit access to healthcare facilities in Singapore</h2>
+
+	<!-- Map for all healthcare facilities -->
+	
+		<h3>Public healthcare facilities and their nearest transit stops</h3>
+		<p>The map below shows each healthcare facility and its closest bus stop, MRT station exit and taxi stand. <br>Click on each icon to see the related transit stop and walking distance information.</p> 
+		<p class="smaller">Note: Taxis in Singapore are able to stop at the dropoff porch of most, if not all healthcare facilities. However, there may still be an issue with 
+			accessing taxis in the return trip if the healthcare facility has no taxi stand and one does not know how to use grab hail apps such as Grab.</p>
+			
+			<p>Zoom to: <span class="dropdown">
+				<select id="clinic-select">
+				  <option value="" selected disabled>Select a Healthcare Facility</option>
+				</select></span></p>
+				<div class="chart-container">
+					<div id="map" class="map-container"></div>
+		<p class="smaller">
+			Data sources: Locations of healthcare facilities from <a href="https://www.hcidirectory.gov.sg/hcidirectory/" target="_blank">HCI Directory</a>, 
+			locations of transit stops from <a href="https://datamall.lta.gov.sg/content/datamall/en.html" target="_blank">LTA DataMall</a>. Each healthcare facility was matched to its closest transit stop using Nearest Neighbour analysis.
+			</p>
+			<p>Many restructured and community hospitals are located right next to each other, for continuity of care. Interestingly, some polyclinics are also relatively close on the map e.g. Choa Chu Kang and Bukit Panjang. 
+				The Government has announced <a href="https://mothership.sg/2023/03/new-polyclinics/" target="_blank">plans to build more polyclinics</a> in Singapore.
+			</p>
+</div>
+</div>
+<div class="row align-items-center justify-content-center intro">
+	<h3>Last-mile walking distance and duration from healthcare facilities</h3>
+	<p>The bar charts below show the walking distances between healthcare facilities and their nearest bus stop, MRT station exit or taxi stand. These are then converted into walking durations (minutes) for seniors, assuming their average walking speed is 58m per minute.
+		</p>
+		
+		<!-- Bar Chart for Polyclinics -->
+		<div class="chart-container">
+			<div class="header-wrapper">Last-mile walking distance to polyclinics</div>
+                <label for="travel-mode">Walking distance (metres) from nearest:</label>
+		<select id="travel-mode">
+			<option value="Bus">Bus Stop</option>
+			<option value="MRT">MRT Station Exit</option>
+			<option value="Taxi">Taxi Stand</option>
+			<option value="Min">(Any) transit node (minimum)</option>
+		</select>
+		<svg id="bar-chart" preserveAspectRatio="xMidYMid meet"></svg>
+	</div>
+
+	<!-- Bar Chart for Restructured Hospitals -->
+		<div class="chart-container">
+			<div class="header-wrapper">Last-mile walking distance to restructured hospitals</div>
+            <label for="travel-mode-2">Walking distance (metres) from nearest: </label>
+  <select id="travel-mode-2">
+      <option value="Bus">Bus Stop</option>
+      <option value="MRT">MRT Station Exit</option>
+      <option value="Taxi">Taxi Stand</option>
+      <option value="Min">(Any) transit node (minimum)</option>
+  </select>
+</div>
+  <svg id="bar-chart-2" preserveAspectRatio="xMidYMid meet"></svg>
+
+	<!-- Bar Chart for Comm Hospitals -->
+	<div class="chart-container">
+		<div class="header-wrapper">Last-mile walking distance to community hospitals</div>
+		<label for="travel-mode-3">Walking distance (metres) from nearest: </label>
+<select id="travel-mode-3">
+  <option value="Bus">Bus Stop</option>
+  <option value="MRT">MRT Station Exit</option>
+  <option value="Taxi">Taxi Stand</option>
+  <option value="Min">(Any) transit node (minimum)</option>
+</select>
+</div>
+<svg id="bar-chart-3" preserveAspectRatio="xMidYMid meet"></svg>
+<p class="smaller">Data source: Walking distances for bar charts obtained via <a href="https://developers.google.com/maps/documentation/distance-matrix/overview" target="_blank">Google's Distance Matrix API</a>. 
+</p>
+  <p>From the bar charts above, the average <strong>minimum last-mile distance for restructured hospitals is the longest</strong> compared to polyclinics or community hospitals regardless of the transit mode, 
+	which means that on average, residents accessing restructured hospitals tend to have to walk longer in the last mile from their transit nodes, than residents accessing polyclinics or community hospitals.</p>
+</div>
+
+<div class="row align-items-center justify-content-center intro">
+
+<!-- Boxplot -->
+<h3>Distribution of last-mile distances from healthcare facilities, between transit modes</h3>
+	<p>The boxplots below show the distribution of walking distances from transit stops to healthcare facilities 
+		across different modes of transportation and facility types, and their median, quartiles, and any outliers. </p> 
+<p class="smaller">
+	You can toggle the visibility of particular boxes on or off by clicking on the corresponding label in the legend.
+	Hover over a particular box to display summary statistics. You can also zoom in on a particular section of the plot 
+	by dragging the mouse over that section. 
+	</p> 
+	<div class="chart-container">
+	<div class="header-wrapper">Walking distances from public transit stops to healthcare facilities</div>
+    <div id="plot"></div></div>
+	<p>From the boxplots, the walking distances from healthcare facilities to <strong>MRT stations and taxi stands</strong> are <strong>more variable</strong> than the walking distances from bus stops.</p>
+	<p>There are a couple of healthcare facilities for which <strong>outliers</strong> exist for the MRT and taxi modes, which means residents visiting these healthcare facilities would be most compelled to pick the bus option.</p>
+</div>
+
+<div class="row align-items-center justify-content-center intro">
+
+<!-- Slope Chart for Polyclinics -->
+<h3>Equity of last-mile distance from healthcare facilities, between transit modes</h3>
+<p>In the parallel coordinates chart below, each line represents a healthcare facility. Mouseover each line to see all the healthcare facilities of the same type and the name of the healthcare facility.</p>
+<!-- to calculate standard deviations for each transit mode across hc_type -->
+<div class="col-lg-3">
+	<p>We can compare changes in walking distances across different transit modes. 
+		The <strong>direction of slope</strong> indicates the <strong>positive or negative</strong> difference in walking distances between healthcare facilities and 2 transit modes. 
+		The <strong>steepness</strong> of the slope indicates the <strong>magnitude of difference</strong> in distances between healthcare facilities and 2 transit modes. 
+		The steeper the line, the greater the difference between the 2 transit modes.
+	</p> 
+</div>
+<div class="col-lg-9">
+	<div id="slopechart" preserveAspectRatio="xMidYMid meet"></div>	
+</div>
+<p>From the parallel coordinates chart, most lines tend to go in an upwards direction from "Bus stop" to "MRT Station" then downwards again to "Taxi Stand" for polyclinics and restructured hospitals. 
+This shows that <strong>ending one's journey with MRT results in the longest last-mile walking distance</strong> for residents accessing 
+<strong>polyclinics</strong> and <strong>restructured hospitals</strong>, compared to bus or taxi.</p>
+		<p>For <strong>community hospitals</strong>, most lines tend to go upwards from "Bus Stop" to "MRT Station" to "Taxi Stand". 
+			This shows that residents who are reliant on taking <strong>taxi</strong> (especially those with limited mobility), without assistance to flag a cab to the pickup porch or the use of ride hailing apps, home from a community hospital may have to walk 
+		<strong>longer</strong> to a taxi stand. </p>
+	<p>Healthcare facilities with <strong>flatter lines</strong> across transit modes result in <strong>higher equity</strong> between transit modes for their residents, while healthcare facilities with <strong>greater 
+		changes in the steepness</strong> of the lines result in <strong>lower equity</strong> as they force residents to decide on the best transit mode with the least walking distance. For example, residents thinking of accessing Marine Parade Polyclinic, Pasir Ris Polyclinic, IMH or 
+		Alexandra Hospital are more forced to consider taking a bus or taxi compared to MRT. Residents who want to go home from Bright Vision Hospital or St Luke's Hospital would 
+		face greater issues taking a taxi if they do not have assistance flagging or hailing a taxi.
+
+</p>
+<h3>Limitations and future research directions</h3>
+<p>	The taxi stand data from the <a href="https://datamall.lta.gov.sg/content/datamall/en.html" target="_blank">LTA DataMall</a> is not comprehensive and excludes taxi stands within hospitals. 
+	Some healthcare facilities might also assist visitors in flagging taxis for them. Hence, the walking distance from taxi stands to healthcare facilities is likely overestimated.
+</p>
+<p>There are also <a href="https://www.aic.sg/care-services/medical-escort-and-transport" target="_blank">medical escort and transportation 
+		services</a> available that can help seniors travel to and from their homes for medical appointments. These can help overcome the last-mile access problem for healthcare, for those 
+		who can benefit from the services. However, these are available at a higher cost (means-tested Government subsidies are available). 
+</p>
+
+<p>
+In future research, I would explore the inequities in access to healthcare in terms of <strong>where residents stay</strong> (e.g. residential subzones), rather than specific healthcare facility types, 
+as well as <strong>total travel duration for a mix of travel modes</strong> in addition to the last-mile walking distances. 
+</p>
+</div>
+<!-- Footer -->
+<div class="footer">
+	<p>---------------------------------------------------------</p>
+	Submitted as an assignment for the 02.526 Interactive Data Visualisation elective in SUTD.<br>
+	By <a href="https://lenezoe.github.io/" target="_blank">Alice Lee</a> | 
+	<a href="https://chi-loong.github.io/HASS02.526/" target="_blank">Class Page</a>
+
+</div>
+
+</div> 
+<script src="map.js"></script>
+<script src="barchart_polyclinics.js"></script>
+<script src="barchart_reshosps.js"></script>
+<script src="barchart_commhosps.js"></script>
+<script src="slopechart.js"></script>
+<script src="boxplot.js"></script>
+</body>
 </html>
