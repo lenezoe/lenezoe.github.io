@@ -160,4 +160,4 @@ slopeSvg.append("text")
   .attr("x", 0)
   .attr("y", -25)
   .style("text-anchor", "start")
-  .text("Walking distance (metres) from:");
+  .text("Walking distance (metres) from nearest:");
