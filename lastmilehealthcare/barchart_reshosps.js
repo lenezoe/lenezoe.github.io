@@ -54,6 +54,7 @@ const loadAndProcessData2 = (travelMode) => {
       .attr("class", "bar")
       .attr("y", (d) => y(d.clinicName))
       .attr("height", y.bandwidth())
+      .merge(bars)
       .on("mouseover", (event, d) => {
         tooltip.style("opacity", 1).html(tooltipText(d));
       })

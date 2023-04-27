@@ -97,7 +97,7 @@ a:hover {
 
 /* bar charts */
 
-.tooltip,.tooltip2 {
+.tooltip {
   position: absolute;
   background-color: #333;
   color: white;
