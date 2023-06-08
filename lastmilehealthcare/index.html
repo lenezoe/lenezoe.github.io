@@ -81,7 +81,7 @@
 </div>
 <div class="row align-items-center justify-content-center intro">
 	<h3>Last-mile walking distance and duration from healthcare facilities</h3>
-	<p>The bar charts below show the walking distances between healthcare facilities and their nearest bus stop, MRT station exit or taxi stand. These are then converted into walking durations (minutes) for seniors, assuming their average walking speed is 58m per minute.
+	<p>The bar charts below show the walking distances between healthcare facilities and their nearest 2 bus stops, MRT station exit or taxi stand. These are then converted into walking durations (minutes) for seniors, assuming their average walking speed is 58m per minute.
 		</p>
 		
 		<!-- Bar Chart for Polyclinics -->
@@ -89,7 +89,7 @@
 			<div class="header-wrapper">Last-mile walking distance to polyclinics</div>
                 <label for="travel-mode">Walking distance (metres) from nearest:</label>
 		<select id="travel-mode">
-			<option value="Bus">Bus Stop</option>
+			<option value="Bus">Bus Stop (average of 2 nearest)</option>
 			<option value="MRT">MRT Station Exit</option>
 			<option value="Taxi">Taxi Stand</option>
 			<option value="Min">(Any) transit node (minimum)</option>
@@ -102,7 +102,7 @@
 			<div class="header-wrapper">Last-mile walking distance to restructured hospitals</div>
             <label for="travel-mode-2">Walking distance (metres) from nearest: </label>
   <select id="travel-mode-2">
-      <option value="Bus">Bus Stop</option>
+      <option value="Bus">Bus Stop (average of 2 nearest)</option>
       <option value="MRT">MRT Station Exit</option>
       <option value="Taxi">Taxi Stand</option>
       <option value="Min">(Any) transit node (minimum)</option>
@@ -115,7 +115,7 @@
 		<div class="header-wrapper">Last-mile walking distance to community hospitals</div>
 		<label for="travel-mode-3">Walking distance (metres) from nearest: </label>
 <select id="travel-mode-3">
-  <option value="Bus">Bus Stop</option>
+  <option value="Bus">Bus Stop (average of 2 nearest)</option>
   <option value="MRT">MRT Station Exit</option>
   <option value="Taxi">Taxi Stand</option>
   <option value="Min">(Any) transit node (minimum)</option>
@@ -133,7 +133,7 @@
 
 <!-- Boxplot -->
 <h3>Distribution of last-mile distances from healthcare facilities, between transit modes</h3>
-	<p>The boxplots below show the distribution of walking distances from transit stops to healthcare facilities 
+	<p>The boxplots below show the distribution of walking distances from transit stops (nearest 2 bus stops, MRT station or taxi stand) to healthcare facilities 
 		across different modes of transportation and facility types, and their median, quartiles, and any outliers. </p> 
 <p class="smaller">
 	You can toggle the visibility of particular boxes on or off by clicking on the corresponding label in the legend.

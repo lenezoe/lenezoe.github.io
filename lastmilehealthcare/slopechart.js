@@ -23,7 +23,7 @@ const slopeSvg = d3
   .attr("transform", `translate(${margin3.left}, ${margin3.top})`);
 
 // Parse the Data
-d3.csv("healthcare.csv").then(function (data) {
+d3.csv("healthcare-updated-with-taxi.csv").then(function (data) {
 
   // Color scale
   const color = d3.scaleOrdinal()
@@ -107,10 +107,11 @@ d3.csv("healthcare.csv").then(function (data) {
     .append("text")
     .style("text-anchor", "middle")
     .style("font-size", ".9rem")
+    .attr("x", 15)
     .attr("y", -5)
     .text(function (d) {
       if (d === "lastmileBus") {
-        return "Bus Stop";
+        return "Bus Stop (nearest 2)";
       } else if (d === "lastmileMRT") {
         return "MRT Station";
       } else if (d === "lastmileTaxi") {

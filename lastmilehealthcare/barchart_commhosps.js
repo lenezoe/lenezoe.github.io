@@ -33,7 +33,7 @@ const loadAndProcessData3 = (travelMode) => {
       tooltipText = (d) => getTooltipText(d, distanceKey);
       break;
   }
-  d3.csv("healthcare.csv").then((data) => {
+  d3.csv("healthcare-updated-with-taxi.csv").then((data) => {
      // Filter the data by whether hc facilty is comm hosps or restructured hosps
      data = data.filter(d => d.hc_type === "Community_Hospital");
     // Sort the data by the selected distance column in descending order

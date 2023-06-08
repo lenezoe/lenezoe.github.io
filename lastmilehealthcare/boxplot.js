@@ -1,5 +1,5 @@
-// Load the healthcare.csv file using Plotly.d3.csv()
-Plotly.d3.csv("healthcare.csv", function (err, rows) {
+// Load the healthcare-updated-with-taxi.csv file using Plotly.d3.csv()
+Plotly.d3.csv("healthcare-updated-with-taxi.csv", function (err, rows) {
   // Create an empty array for each hc_type group and each transportation variable
   var polyclinicBus = [];
   var polyclinicMRT = [];
@@ -142,7 +142,7 @@ Plotly.d3.csv("healthcare.csv", function (err, rows) {
       borderwidth: 0,
     },
     plot_bgcolor: "rgba(0,0,0,0)", //remove the plot background
-    paper_bgcolor: "#F3F0EC", //paper background
+    paper_bgcolor: "#FFFFFF", //paper background
   };
 
   // Plot the boxplots using Plotly.newPlot()

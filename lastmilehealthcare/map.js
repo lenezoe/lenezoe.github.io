@@ -20,8 +20,8 @@ function zoomToMarker() {
     });
   }
   
-// Fetch the data from the healthcare.csv file
-Papa.parse('healthcare.csv', {
+// Fetch the data from the healthcare-updated-with-taxi.csv file
+Papa.parse('healthcare-updated-with-taxi.csv', {
     download: true,
     header: true,
     complete: function (results) {
