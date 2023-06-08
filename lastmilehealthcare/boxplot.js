@@ -116,7 +116,7 @@ Plotly.d3.csv("healthcare-updated-with-taxi.csv", function (err, rows) {
   // Define the layout for the plot
   var layout = {
     xaxis: {
-      title: "Distance (km)",
+      title: "Distance (metres)",
     },
     yaxis: {
       automargin: true,
