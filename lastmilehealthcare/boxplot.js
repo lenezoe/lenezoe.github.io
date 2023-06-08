@@ -142,7 +142,7 @@ Plotly.d3.csv("healthcare-updated-with-taxi.csv", function (err, rows) {
       borderwidth: 0,
     },
     plot_bgcolor: "rgba(0,0,0,0)", //remove the plot background
-    paper_bgcolor: "#FFFFFF", //paper background
+    paper_bgcolor: "#F3F0EC", //paper background
   };
 
   // Plot the boxplots using Plotly.newPlot()
