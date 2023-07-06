@@ -159,14 +159,10 @@
             margin-bottom: 0;
             margin-top: 0;
         }
-
-        a {
-            cursor: pointer;
-        }
-
         a {
             text-decoration: underline;
-            color:#ffffff;
+            cursor: pointer;
+            color:#000000;
         }
 
         
@@ -553,7 +549,7 @@
         }
 
         .nav-dropdown .dropdown-menu .dropdown-item {
-            line-height: 50px;
+            line-height: 40px;
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -782,7 +778,7 @@
             transform: rotate(45deg);
         }
 
-        .builder-sidebar {
+        {
             position: relative;
             height: auto;
             min-width: 200px;
@@ -793,7 +789,7 @@
             box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.24);
         }
 
-        .builder-sidebar .dropdown:hover>.dropdown-menu {
+        .dropdown:hover>.dropdown-menu {
             position: relative;
             text-align: center;
         }
@@ -1759,6 +1755,7 @@
 
             .display-7 {
                 font-size: calc(1.0625rem * 0.9);
+                color:#000000;
             }
 
         }
@@ -2404,7 +2401,7 @@
             background-color: #222222;
         }
 
-        .cid-r7 .builder-sidebar {
+        .cid-r7 {
             background-color: #ffffff;
         }
 
@@ -2608,6 +2605,10 @@
             position: absolute;
             top: 0;
             left: 0;
+        }
+
+        .three-sections a {
+            color:#ffffff;
         }
 
         .three-sections .card-wrapper .card-img:before {
@@ -3268,7 +3269,7 @@
                             <h1 class="mbr-section-title mbr-fonts-style mbr-bold mbr-white mbr-pb-1 display-2">AIM ONE</h1>
                             <p class="mbr-text mbr-fonts-style mbr-white display-3">
                                 Determine the <strong>accessibility</strong> of healthcare services by examining the
-                                <strong></strong>travel durations and costs</strong> between public transportation (PT)
+                                <strong></strong>travel durations and costs</strong> between public transportation 
                                 and private car travel modes for community-dwelling seniors, and last-mile proximity
                                 from transit stops in Singapore. </p>
                               
@@ -3289,7 +3290,7 @@
 
                             <h1 class="mbr-section-title mbr-fonts-style mbr-bold mbr-white mbr-pb-1 display-2">AIM TWO</h1>
                             <p class="mbr-text mbr-fonts-style mbr-white display-3">
-                                Assess and identify environmental barriers or enablers that seniors using transit
+                                Assess and identify environmental barriers or enablers that seniors using public transportation
                                 services might face when making the last-mile trip from the nearest transit stop to
                                 healthcare facilities in Singapore. </p>
                         </div>
@@ -3302,7 +3303,7 @@
         </div>
     </section>
 
-    <section class="header4 cid-r9" id="header4-a">
+    <section class="header4 cid-r9" id="method-1">
 
 
         <div class="mbr-overlay mbr-col-md-7"></div>
@@ -3312,8 +3313,8 @@
                 <div class="container-elements mbr-flex flex-wrap mbr-row-reverse">
 
                     <div class="image-wrap mbr-flex mbr-col-sm-12 mbr-col-md-7">
-                        <amp-img src="website-pictures/steven-hwg-zBsdRTHIIm4-unsplash.jpg" layout="responsive"
-                            width="552" height="368" alt="Mobirise" class="mobirise-loader mbr-m-auto">
+                        <amp-img src="website-pictures/traveljourney.jpg" 
+                            width="1000" height="580" alt="Mobirise" class="mobirise-loader mbr-m-auto">
                             <div placeholder="" class="placeholder">
                                 <div class="mobirise-spinner">
                                     <em></em>
@@ -3331,14 +3332,11 @@
                             <div class="mbr-list mbr-pt-4">
 
                                 <div class="mbr-flex items-list">
-
-                                    <div class="icon-wrap">
-                                        <span class="amp-iconfont fa-building fa"></span>
-                                    </div>
-                                    <div class="list-box">
-
-                                        <p class="mbr-text mbr-fonts-style mbr-regular display-7">HOUSE INSURANCE</p>
-                                    </div>
+                                    <p class="mbr-text mbr-fonts-style mbr-regular display-7">
+                                        Singapore is divided into 228 residential precincts defined as “subzones” by the Urban Redevelopment Authority (URA). 226 subzones with at least one senior resident aged 65 and above were included in the study. 
+                                        40 healthcare facilities that community-dwelling seniors are likely to access based on their healthcare needs were included in this study, including 23 polyclinics, 8 government restructured hospitals (RHs) and 9 community hospitals (CHs).
+                                        <br><br>
+                                   Data was extracted using <a href="https://developers.google.com/maps/documentation/distance-matrix/overview" target="_blank">Google Distance Matrix API</a> and <a href="https://datamall.lta.gov.sg/content/datamall/en.html" target="_blank">LTA DataMall</a>, and processed for analysing:</p>
                                 </div>
                                 <div class="mbr-flex items-list">
 
@@ -3348,7 +3346,8 @@
                                     <div class="list-box">
 
                                         <p class="mbr-text mbr-fonts-style mbr-regular display-7">
-                                            LIFE INSURANCE</p>
+                                            Absolute and relative accessibility in terms of travel duration and costs from each subzone to each target healthcare facility</p>
+                                            The public transportation/walking duration for each subzone:healthcare facility pair was assumed to be the fastest (minimum) travel duration across the 7 selected Google’s Distance Matrix API travel modes </p>
                                     </div>
                                 </div>
                                 <div class="mbr-flex items-list">
@@ -3359,37 +3358,12 @@
                                     <div class="list-box">
 
                                         <p class="mbr-text mbr-fonts-style mbr-regular display-7">
-                                            TRAVEL INSURANCE</p>
+                                        Last-mile walking distances from nearest transit stop to each healthcare facility. </p>
                                     </div>
                                 </div>
-                                <div class="mbr-flex items-list">
-
-                                    <div class="icon-wrap">
-                                        <span class="amp-iconfont fa-automobile fa"></span>
-                                    </div>
-                                    <div class="list-box">
-
-                                        <p class="mbr-text mbr-fonts-style mbr-regular display-7">
-                                            CAR INSURANCE</p>
-                                    </div>
-                                </div>
-                                <div class="mbr-flex items-list">
-
-                                    <div class="icon-wrap">
-                                        <span class="amp-iconfont fa-group fa"></span>
-                                    </div>
-                                    <div class="list-box">
-
-                                        <p class="mbr-text mbr-fonts-style mbr-regular display-7">
-                                            BUSINESS INSURANCE</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="mbr-text element-text mbr-fonts-style mbr-regular display-4 mbr-pt-3">We protect
-                                you in more ways than you'd think. We'll include many coverages that do more than
-                                protect your physical structure.</p>
-                            <div class="mbr-section-btn mbr-pt-3"><a class="btn-primary btn btn-md display-4" href="#header4-c">
-                                    LEARN HOW</a></div>
+                                
+                            <div class="mbr-section-btn mbr-pt-3"><a class="btn-primary btn btn-md display-4" href="#findings-1">
+                                    PART ONE FINDINGS</a></div>
                         </div>
                     </div>
                 </div>
@@ -3397,7 +3371,7 @@
         </div>
     </section>
 
-    <section class="header4 cid-r9" id="header4-b">
+    <section class="header4 cid-r9" id="method-2">
 
 
         <div class="mbr-overlay mbr-col-md-7"></div>
@@ -3427,7 +3401,7 @@
                                     Addressing AIM TWO, the walkability assessment aims to gather insights on potential areas of improvement to facilitate seniors' access to restructured hospitals (RHs). 
                                     <br><br>The assessment involved a survey of the last-mile routes - from the nearest MRT station* or bus stop - to each of the 8 RHs, by three researchers (May to June 2023).
                                    <br><br>The walkability survey instrument was developed comprising eleven variables representing three walkability dimensions of each route segment.</p>
-                                   <div class="mbr-section-btn mbr-pt-3"><a class="btn-primary btn btn-md display-4" href="#features12-4">
+                                   <div class="mbr-section-btn mbr-pt-3"><a class="btn-primary btn btn-md display-4" href="#dimensions">
                                     DIMENSIONS</a></div>
                                     <p class="mbr-text mbr-fonts-style display-1"><br><br>* MRT routes for AH, CGH, SGH and KTPH are excluded as they already provide shuttle bus services from the nearest MRT station.</p>
 
@@ -3438,7 +3412,7 @@
         </div>
     </section>
 
-    <section class="features12 three-sections" id="features12-4">
+    <section class="features12 three-sections" id="dimensions">
 
         <div class="container-fluid">
 
@@ -3446,7 +3420,7 @@
                 <div class="card mbr-col-sm-12 mbr-col-md-4">
                     <div class="card-wrapper mbr-flex mbr-column mbr-jc-c mbr-px-1 mbr-py-3">
                         <div class="card-img img-with-overlay">
-                            <amp-img src="website-pictures/steven-hwg-zBsdRTHIIm4-unsplash.jpg" layout="responsive"
+                            <amp-img src="website-pictures/stairs.jpg" layout="responsive"
                                 width="621" class="mobirise-loader" height="414" alt="Mobirise">
                                 <div placeholder="" class="placeholder">
                                     <div class="mobirise-spinner">
@@ -3484,7 +3458,7 @@
                 <div class="card mbr-col-sm-12 mbr-col-md-4">
                     <div class="card-wrapper mbr-flex mbr-column mbr-jc-c mbr-px-1 mbr-py-3">
                         <div class="card-img img-with-overlay">
-                            <amp-img src="website-pictures/steven-hwg-zBsdRTHIIm4-unsplash.jpg" layout="responsive"
+                            <amp-img src="website-pictures/traffic.jpg" layout="responsive"
                                 width="621" class="mobirise-loader" height="414" alt="Mobirise">
                                 <div placeholder="" class="placeholder">
                                     <div class="mobirise-spinner">
@@ -3520,7 +3494,7 @@
                 <div class="card mbr-col-sm-12 mbr-col-md-4 last-child">
                     <div class="card-wrapper mbr-flex mbr-column mbr-jc-c mbr-px-1 mbr-py-3">
                         <div class="card-img img-with-overlay">
-                            <amp-img src="website-pictures/steven-hwg-zBsdRTHIIm4-unsplash.jpg" layout="responsive"
+                            <amp-img src="website-pictures/shelter.jpg" layout="responsive"
                                 width="621" class="mobirise-loader" height="414" alt="Mobirise">
                                 <div placeholder="" class="placeholder">
                                     <div class="mobirise-spinner">
@@ -3554,21 +3528,9 @@
             </div>
         </div>
     </section>
-    <section class="header4 cid-r9" id="header4-d">
-        <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/lastmilemap_obstacles6Jul23.html"
-            frameborder="0" width="100%" height="600px"></iframe>
-            <center><div class="mbr-section-btn mbr-pt-3">
-                <a class="btn btn-md btn-primary-outline display-4" href="#features12-4">
-                Back to Survey Dimensions</a></div></center>
-    </section>
-    <section class="header4 cid-r9" id="header4-e">
-        <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/lastmile_wayfinding.html"
-            frameborder="0" width="100%" height="600px"></iframe>
-            <center><div class="mbr-section-btn mbr-pt-3">
-                <a class="btn btn-md btn-primary-outline display-4" href="#features12-4">
-                Back to Survey Dimensions</a></div></center></section>
 
-    <section class="header3 cid-r5jZrhJca3" id="header3-7">
+    
+    <section class="header3 cid-r5jZrhJca3" id="findings-1">
 
 
         <div class="mbr-overlay mbr-col-md-7"></div>
@@ -3578,7 +3540,7 @@
                 <div class="container-elements mbr-flex flex-wrap mbr-row-reverse">
 
                     <div class="image-wrap mbr-flex mbr-col-sm-12 mbr-col-md-7">
-                        <amp-img src="website-pictures/steven-hwg-zBsdRTHIIm4-unsplash.jpg" layout="responsive"
+                        <amp-img src="website-pictures/mrttop.jpg" layout="responsive"
                             width="840" height="560" alt="Mobirise" class="mobirise-loader mbr-m-auto">
                             <div placeholder="" class="placeholder">
                                 <div class="mobirise-spinner">
@@ -3592,7 +3554,7 @@
                     </div>
                     <div class="second-element mbr-flex mbr-col-sm-12 mbr-col-md-5">
                         <div class="second-element-box mbr-m-auto">
-                            <h2 class="element-title mbr-fonts-style mbr-bold display-2">About Us</h2>
+                            <h2 class="element-title mbr-fonts-style mbr-bold display-2">Spatial Analysis Findings</h2>
 
                             <div class="mbr-list mbr-pt-4">
 
@@ -3603,78 +3565,46 @@
                                     <div class="list-box">
 
                                         <p class="mbr-text mbr-fonts-style mbr-regular display-4">
-                                            Affordable Prices;</p>
+                                            How accessible are healthcare facilities based on transportation choice?</p>
                                     </div>
                                 </div>
-                                <div class="mbr-flex items-list">
-                                    <div class="marker-wrap">
-                                    </div>
-
-                                    <div class="list-box">
-
-                                        <p class="mbr-text mbr-fonts-style mbr-regular display-4">
-                                            Competent Professionals;</p>
-                                    </div>
-                                </div>
-                                <div class="mbr-flex items-list">
-                                    <div class="marker-wrap">
-                                    </div>
-
-                                    <div class="list-box">
-
-                                        <p class="mbr-text mbr-fonts-style mbr-regular display-4">
-                                            Insurance Payment Without Delay;</p>
-                                    </div>
-                                </div>
-                                <div class="mbr-flex items-list">
-                                    <div class="marker-wrap">
-                                    </div>
-
-                                    <div class="list-box">
-
-                                        <p class="mbr-text mbr-fonts-style mbr-regular display-4">
-                                            24/7 Friendly Support.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="mbr-text element-text mbr-fonts-style mbr-regular display-4 mbr-pt-3">The
-                                professionals Insurance Company are experts in their fields and will help you design
-                                solutions that fit your needs. We look forward to working with you!</p>
+                               
+                            <p class="mbr-text element-text mbr-fonts-style mbr-regular display-4 mbr-pt-3">Compared to driving, public transportation users face:</p>
                             <div class="milestone mbr-row mbr-px-2 mbr-pt-4">
 
                                 <div class="mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-6">
                                     <div class="numeral mbr-flex">
-                                        <h4 class="mbr-fonts-style mbr-bold display-5">1500</h4>
-                                        <h4 class="mbr-fonts-style mbr-bold display-6">+</h4>
+                                        <h4 class="mbr-fonts-style mbr-bold display-5">2.8</h4>
+                                        <h4 class="mbr-fonts-style mbr-bold display-6">times</h4>
                                     </div>
                                     <p class="mbr-text mbr-fonts-style mbr-semibold display-4">
-                                        Happy Clients</p>
+                                        travel time</p>
                                 </div>
                                 <div class="mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-6">
                                     <div class="numeral mbr-flex">
-                                        <h4 class="mbr-fonts-style mbr-bold display-5">200
+                                        <h4 class="mbr-fonts-style mbr-bold display-5">18.3
                                         </h4>
-                                        <h4 class="mbr-fonts-style mbr-bold display-6">+</h4>
+                                        <h4 class="mbr-fonts-style mbr-bold display-6">mins</h4>
                                     </div>
                                     <p class="mbr-text mbr-fonts-style mbr-semibold display-4">
-                                        Professional Agents</p>
+                                        longer travel time</p>
                                 </div>
                                 <div class="mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-6">
                                     <div class="numeral mbr-flex">
                                         <h4 class="mbr-fonts-style mbr-bold display-5">
-                                            25</h4>
-                                        <h4 class="mbr-fonts-style mbr-bold display-6">+</h4>
+                                            10</h4>
+                                        <h4 class="mbr-fonts-style mbr-bold display-6">%</h4>
                                     </div>
                                     <p class="mbr-text mbr-fonts-style mbr-semibold display-4">
-                                        Insurance Products</p>
+                                        travel cost</p>
                                 </div>
                                 <div class="mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-6">
                                     <div class="numeral mbr-flex">
-                                        <h4 class="mbr-fonts-style mbr-bold display-5">15</h4>
+                                        <h4 class="mbr-fonts-style mbr-bold display-5">$6.75</h4>
                                         <h4 class="mbr-fonts-style mbr-bold display-6"></h4>
                                     </div>
                                     <p class="mbr-text mbr-fonts-style mbr-semibold display-4">
-                                        Years of Experience</p>
+                                        less travel cost</p>
                                 </div>
                             </div>
                         </div>
@@ -3682,102 +3612,32 @@
                 </div>
             </div>
         </div>
+        <center><div class="mbr-section-btn mbr-pt-3">
+            <a class="btn btn-md btn-primary-outline display-4" href="#method-1">
+            Back to Part One</a></div></center>
     </section>
-
-    <section class="teams1 cid-r5jZHCuWND" id="teams1-9">
+    <section class="teams1 cid-r5jZHCuWND" id="header4-d">
 
 
 
         <div class="container">
             <div class="title-wrap mbr-pb-4 align-center">
-                <h3 class="mbr-section-title mbr-semibold mbr-fonts-style display-2">Meet Our Team</h3>
+                <h3 class="mbr-section-title mbr-semibold mbr-fonts-style display-2">Walkability Assessment Findings</h3>
 
             </div>
-            <div class="mbr-row mbr-jc-c">
-                <div class="card mbr-col-sm-12 mbr-col-md-4">
-                    <div class="card-wrapper mbr-flex">
-                        <div class="card-img">
-                            <amp-img class="mobirise-loader rounded"
-                                src="website-pictures/steven-hwg-zBsdRTHIIm4-unsplash.jpg" layout="responsive"
-                                width="78" height="78" alt="Mobirise">
-                                <div placeholder="" class="placeholder">
-                                    <div class="mobirise-spinner">
-                                        <em></em>
-                                        <em></em>
-                                        <em></em>
-                                    </div>
-                                </div>
 
-                            </amp-img>
-                        </div>
-                        <div class="card-box">
-                            <h3 class="card-title mbr-semibold mbr-fonts-style mbr-pb-1 display-4">Olivia Snow</h3>
-                            <h4 class="card-subtitle mbr-semibold mbr-fonts-style display-4">Chief Financial Officer
-                            </h4>
-                            <p class="card-text mbr-fonts-style mbr-regular display-4">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="card mbr-col-sm-12 mbr-col-md-4">
-                    <div class="card-wrapper mbr-flex">
-                        <div class="card-img">
-                            <amp-img class="mobirise-loader rounded"
-                                src="website-pictures/steven-hwg-zBsdRTHIIm4-unsplash.jpg" la yout="responsive"
-                                width="78" height="78" alt="Mobirise">
-                                <div placeholder="" class="placeholder">
-                                    <div class="mobirise-spinner">
-                                        <em></em>
-                                        <em></em>
-                                        <em></em>
-                                    </div>
-                                </div>
-
-                            </amp-img>
-                        </div>
-                        <div class="card-box">
-                            <h3 class="card-title mbr-semibold mbr-fonts-style display-4 mbr-pb-1">
-                                Rafe Stevenson</h3>
-                            <h4 class="card-subtitle mbr-semibold mbr-fonts-style display-4">Vice President of Claims
-                            </h4>
-                            <p class="card-text mbr-fonts-style mbr-regular display-4">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="card mbr-col-sm-12 mbr-col-md-4 last-child">
-                    <div class="card-wrapper mbr-flex">
-                        <div class="card-img">
-                            <amp-img class="mobirise-loader rounded"
-                                src="website-pictures/steven-hwg-zBsdRTHIIm4-unsplash.jpg" layout="responsive"
-                                width="78" height="78" alt="Mobirise">
-                                <div placeholder="" class="placeholder">
-                                    <div class="mobirise-spinner">
-                                        <em></em>
-                                        <em></em>
-                                        <em></em>
-                                    </div>
-                                </div>
-
-                            </amp-img>
-                        </div>
-                        <div class="card-box">
-                            <h3 class="card-title mbr-semibold mbr-fonts-style display-4 mbr-pb-1">
-                                Hilary Mills</h3>
-                            <h4 class="card-subtitle mbr-semibold mbr-fonts-style display-4">Executive Vice President
-                            </h4>
-                            <p class="card-text mbr-fonts-style mbr-regular display-4">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-
-            </div>
-        </div>
+        <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/lastmilemap_obstacles6Jul23.html"
+            frameborder="0" width="100%" height="600px"></iframe>
+            <center><div class="mbr-section-btn mbr-pt-3">
+                <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
+                Back to Survey Dimensions</a></div></center>
     </section>
+    <section class="header4 cid-r9" id="header4-e">
+        <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/lastmile_wayfinding.html"
+            frameborder="0" width="100%" height="600px"></iframe>
+            <center><div class="mbr-section-btn mbr-pt-3">
+                <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
+                Back to Survey Dimensions</a></div></center></section>
 
     <section class="features2 cid-r5jZMYfkdt" id="features2-a">
 
@@ -3787,16 +3647,19 @@
         <div class="container">
             <div class="mbr-row title mbr-pb-4 align-center">
                 <div class="title-wrap mbr-col-sm-12 mbr-col-md-12">
-                    <h2 class="mbr-section-title mbr-semibold mbr-fonts-style display-2">Latest News</h2>
+                    <h2 class="mbr-section-title mbr-semibold mbr-fonts-style display-2">Key Walkability Issues</h2>
 
                 </div>
 
             </div>
             <div class="mbr-row card-container mbr-jc-c">
                 <div class="card mbr-col-sm-12 mbr-col-md-4">
+                    <div class="card-text-box">
+                        <h3 class="card-title mbr-fonts-style mbr-semibold display-6">Wayfinding</h3>
+                    </div>
                     <div class="card-wrapper">
                         <div class="card-img">
-                            <amp-img src="website-pictures/steven-hwg-zBsdRTHIIm4-unsplash.jpg" layout="responsive"
+                            <amp-img src="website-pictures/wayfinding.jpg" layout="responsive"
                                 width="370.5" class="mobirise-loader" height="247" alt="Mobirise">
                                 <div placeholder="" class="placeholder">
                                     <div class="mobirise-spinner">
@@ -3810,28 +3673,51 @@
                         </div>
                         <div class="card-box mbr-pt-4">
 
+                            
                             <div class="category-wrap mbr-pb-3">
                                 <p class="card-info mbr-fonts-style mbr-regular display-4">
-                                    by admin</p>
+                                    Lack of pictograms, lack of diversity of locations</p>
 
-                                <p class="card-date mbr-fonts-style mbr-regular display-4">
-                                    June 28, 2018</p>
-                            </div>
-                            <div class="card-text-box">
-                                <h3 class="card-title mbr-fonts-style mbr-semibold display-6">How to Properly Extend
-                                    Insured Status</h3>
-
-
-                                <div class="card-btn mbr-section-btn mbr-pt-3"><a
-                                        class="btn btn-md btn-primary-outline display-4" href="https://mobirise.com">
-                                        READ MORE</a>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="card mbr-col-sm-12 mbr-col-md-4">
+                    <div class="card-text-box">
+                        <h3 class="card-title mbr-fonts-style mbr-semibold display-6">Safety</h3>
+                    </div>
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <amp-img src="website-pictures/vehicularexpose.jpg" layout="responsive"
+                                width="370.5" class="mobirise-loader" height="247" alt="Mobirise">
+                                <div placeholder="" class="placeholder">
+                                    <div class="mobirise-spinner">
+                                        <em></em>
+                                        <em></em>
+                                        <em></em>
+                                    </div>
+                                </div>
+
+                            </amp-img>
+                        </div>
+                        <div class="card-box mbr-pt-4">
+
+                            <div class="card-title-box mbr-flex flex-wrap mbr-pb-3">
+                                <div class="category-wrap">
+                                    <p class="card-info mbr-fonts-style mbr-regular display-4">
+                                        Exposure to traffic</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mbr-col-sm-12 mbr-col-md-4 last-child">
+                    <div class="card-text-box">
+                        <h3 class="card-title mbr-fonts-style mbr-semibold display-6">Accessibility Issues for Wheelchair Users</h3>
+                    </div>
                     <div class="card-wrapper">
                         <div class="card-img">
                             <amp-img src="website-pictures/steven-hwg-zBsdRTHIIm4-unsplash.jpg" layout="responsive"
@@ -3851,60 +3737,7 @@
                             <div class="card-title-box mbr-flex flex-wrap mbr-pb-3">
                                 <div class="category-wrap">
                                     <p class="card-info mbr-fonts-style mbr-regular display-4">
-                                        by admin</p>
-
-                                    <p class="card-date mbr-fonts-style mbr-regular display-4">
-                                        June 28, 2018</p>
-                                </div>
-                            </div>
-                            <div class="card-text-box">
-                                <h3 class="card-title mbr-fonts-style mbr-semibold display-6">A Look into Nonprofit Risk
-                                    Management</h3>
-
-
-                                <div class="card-btn mbr-section-btn mbr-pt-3"><a
-                                        class="btn btn-md btn-primary-outline display-4" href="https://mobirise.com">
-                                        READ MORE</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card mbr-col-sm-12 mbr-col-md-4 last-child">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <amp-img src="website-pictures/steven-hwg-zBsdRTHIIm4-unsplash.jpg" layout="responsive"
-                                width="370.5" class="mobirise-loader" height="247" alt="Mobirise">
-                                <div placeholder="" class="placeholder">
-                                    <div class="mobirise-spinner">
-                                        <em></em>
-                                        <em></em>
-                                        <em></em>
-                                    </div>
-                                </div>
-
-                            </amp-img>
-                        </div>
-                        <div class="card-box mbr-pt-4">
-
-                            <div class="card-title-box mbr-flex flex-wrap mbr-pb-3">
-                                <div class="category-wrap">
-                                    <p class="card-info mbr-fonts-style mbr-regular display-4">
-                                        by admin</p>
-
-                                    <p class="card-date mbr-fonts-style mbr-regular display-4">
-                                        June 28, 2018</p>
-                                </div>
-                            </div>
-                            <div class="card-text-box">
-                                <h3 class="card-title mbr-fonts-style mbr-semibold display-6">Workers’ Compensation:
-                                    Combinability of Insureds</h3>
-
-
-                                <div class="card-btn mbr-section-btn mbr-pt-3"><a
-                                        class="btn btn-md btn-primary-outline display-4" href="https://mobirise.com">
-                                        READ MORE</a>
+                                        Narrow path, level changes, uneven pavements, lack of shelter</p>
                                 </div>
                             </div>
                         </div>
@@ -3915,98 +3748,6 @@
             </div>
         </div>
     </section>
-
-    <section class="testimonials1 cid-r5uy5lWMd8" id="testimonials1-g">
-
-
-
-        <div class="container">
-            <div class="title-wrap mbr-pb-4 align-center">
-                <h3 class="mbr-section-title mbr-semibold mbr-fonts-style display-2">
-                    Testimonials</h3>
-
-            </div>
-            <div class="mbr-row mbr-jc-c container-card">
-                <div class="card mbr-col-sm-12 mbr-col-md-4">
-                    <div class="card-wrapper align-center">
-                        <div class="card-img">
-                            <amp-img class="mobirise-loader rounded mbr-m-auto"
-                                src="website-pictures/steven-hwg-zBsdRTHIIm4-unsplash.jpg" layout="responsive"
-                                width="111" height="111" alt="Mobirise">
-                                <div placeholder="" class="placeholder">
-                                    <div class="mobirise-spinner">
-                                        <em></em>
-                                        <em></em>
-                                        <em></em>
-                                    </div>
-                                </div>
-
-                            </amp-img>
-                        </div>
-                        <div class="card-box">
-                            <p class="card-text mbr-fonts-style mbr-regular display-7">Lorem ipsum dolor sit amet,
-                                consectetur adipisicing elit, sed do eiusmod.</p>
-                            <h3 class="card-subtitle mbr-semibold mbr-fonts-style mbr-m-auto display-4">
-                                Reynard Cox</h3>
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="card mbr-col-sm-12 mbr-col-md-4">
-                    <div class="card-wrapper align-center">
-                        <div class="card-img">
-                            <amp-img class="mobirise-loader rounded mbr-m-auto"
-                                src="website-pictures/steven-hwg-zBsdRTHIIm4-unsplash.jpg" layout="responsive"
-                                width="111" height="111" alt="Mobirise">
-                                <div placeholder="" class="placeholder">
-                                    <div class="mobirise-spinner">
-                                        <em></em>
-                                        <em></em>
-                                        <em></em>
-                                    </div>
-                                </div>
-
-                            </amp-img>
-                        </div>
-                        <div class="card-box">
-                            <p class="card-text mbr-fonts-style mbr-regular display-7">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                            <h3 class="card-subtitle mbr-semibold mbr-fonts-style display-4 mbr-m-auto">Corey Robertson
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="card mbr-col-sm-12 mbr-col-md-4 last-child">
-                    <div class="card-wrapper align-center">
-                        <div class="card-img">
-                            <amp-img class="mobirise-loader rounded mbr-m-auto"
-                                src="website-pictures/steven-hwg-zBsdRTHIIm4-unsplash.jpg" layout="responsive"
-                                width="111" height="111" alt="Mobirise">
-                                <div placeholder="" class="placeholder">
-                                    <div class="mobirise-spinner">
-                                        <em></em>
-                                        <em></em>
-                                        <em></em>
-                                    </div>
-                                </div>
-
-                            </amp-img>
-                        </div>
-                        <div class="card-box">
-                            <p class="card-text mbr-fonts-style mbr-regular display-7">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                            <h3 class="card-subtitle mbr-semibold mbr-fonts-style display-4 mbr-m-auto">
-                                Joseph Sparks</h3>
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-
-            </div>
-        </div>
-    </section>
-
 
     <section class="footer2 cid-r6" id="footer2-b">
 
