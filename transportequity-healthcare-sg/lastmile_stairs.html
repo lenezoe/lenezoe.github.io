@@ -113,14 +113,15 @@
     <div id="map"></div>
     <div id="sidebar">
         <div id="top">
-            <h1>Path incline/Slopes</h1>
-            <h2>Score for footpath/crossing segments (out of 4)</h2>
+            <h1>Stairs</h1>
+            <h2>Score for footpath segments (out of 5)</h2>
             <p>
             <ul>
-                <li>1 – Steep incline requiring significantly smaller step length/cadence</li>
-                <li>2 – Moderate incline requiring less than regular step length/cadence</li>
-                <li>3 – Gentle incline requiring normal step length/cadence</li>
-                <li>4 – No slope</li>
+                <li>1 – Wheelchair users cannot access (no lift, ramp or slope). Frail pedestrians will also face difficulty (>3 steps and no handrails)</li>
+                <li>2 – Wheelchair users cannot access. Stairs (>3 steps) with handrails.</li>
+                <li>3 – Wheelchair users cannot access. Stairs (≤3 steps).</li>
+                <li>4 – Wheelchair users can access via lift, ramp or slope instead of stairs.</li>
+                <li>5 – No stairs.</li>
             </ul>
             </p>
             <table>
@@ -151,35 +152,35 @@
 
             if (hospName === "ALEXANDRA HOSPITAL") {
                 content +=
-                '<li><a href="#" onclick="zoomToPolyline(\'ALEXANDRA HOSPITAL\', \'B1\')" style="display: inline-block;">Bus route, segment B1</a></li> Gentle downward slope<br><br><img src="survey-pictures/AH-B1-incline.jpg" style="max-width: 100%; height: auto;"><br><br><li><a href="#" onclick="zoomToPolyline(\'ALEXANDRA HOSPITAL\', \'B2\')" style="display: inline-block;">Bus route, segment B2</a></li> Moderate upward slope<br><br><img src="survey-pictures/AH-B2-incline.jpg" style="max-width: 100%; height: auto;"><br><br><li><a href="#" onclick="zoomToPolyline(\'ALEXANDRA HOSPITAL\', \'B3\')" style="display: inline-block;">Bus route, segment B3</a></li> Steep upward slope, requiring less than regular step length/cadence.<br><br><img src="survey-pictures/AH-B3-incline.jpg" style="max-width: 100%; height: auto;"><br><br><li><a href="#" onclick="zoomToPolyline(\'ALEXANDRA HOSPITAL\', \'B7\')" style="display: inline-block;">Bus route, segment B7</a></li> Moderate upward slope inside building<br><br><img src="survey-pictures/AH-B7-incline.jpg" style="max-width: 100%; height: auto;"><br><br>';
+                'No staircase needed to access hospital.';
             }
             else if (hospName === "CHANGI GENERAL HOSPITAL") {
                 content +=
-                '<li><a href="#" onclick="zoomToPolyline(\'CHANGI GENERAL HOSPITAL\', \'B1\')" style="display: inline-block;">Bus route, segment B1</a></li> Gentle upward slope from bus stop<br><br><img src="survey-pictures/CGH-B1-incline.jpg" style="max-width: 100%; height: auto;"><br><br><li><a href="#" onclick="zoomToPolyline(\'CHANGI GENERAL HOSPITAL\', \'B2\')" style="display: inline-block;">Bus route, segment B2</a></li> Steep downward slope that was slightly slippery when wet. Food delivery riders were also seen to ignore the signage warning cyclists to dismount and push their bicycle across the ramp. <br><br><img src=" survey-pictures/CGH-B2-incline.jpg" style="max-width: 100%; height: auto;"> <br><br><img src=" survey-pictures/CGH-B2-incline-2.jpg" style="max-width: 100%; height: auto;"><br><br><li><a href="#" onclick="zoomToPolyline(\'CHANGI GENERAL HOSPITAL\', \'B3\')" style="display: inline-block;">Bus route, segment B3</a></li> Gentle upward slope and moderate downward ramp present.<br><br><img src="survey-pictures/CGH-B3-incline-dw.jpg" style="max-width: 100%; height: auto;"><br><br><img src="survey-pictures/CGH-B3-incline-up.jpg" style="max-width: 100%; height: auto;"><br><br>';
+                'No staircase needed to access hospital.';
 }
             else if (hospName === "KHOO TECK PUAT HOSPITAL") {
                 content +=
-                '<li><a href="#" onclick="zoomToPolyline(\'KHOO TECK PUAT HOSPITAL\', \'B1\')" style="display: inline-block;">Bus route, segment B1</a></li>Moderate upward slope<br><br><img src="survey-pictures/KTPH-B1-incline.jpg" style="max-width: 100%; height: auto;"> <br><br><li><a href="#" onclick="zoomToPolyline(\'KHOO TECK PUAT HOSPITAL\', \'B2\')" style="display: inline-block;">Bus route, segment B2</a></li>Zebra crossing has gentle upward slope.<br><br><img src="survey-pictures/KTPH-B2-incline.jpg" style="max-width: 100%; height: auto;"><br><br>';
+                'No staircase needed to access hospital.';
 }
             else if (hospName === "NATIONAL UNIVERSITY HOSPITAL") {
                 content +=
-                '<li> <a href="#" onclick="zoomToPolyline(\'NATIONAL UNIVERSITY HOSPITAL\', \'B1\')" style="display: inline-block;">Bus route, segment B1</a></li> Steep downward slope requiring significantly smaller step length/cadence.<br><br><img src="survey-pictures/NUH-B1-incline.jpg" style="max-width: 100%; height: auto;"> <a href="#" onclick="zoomToPolyline(\'NATIONAL UNIVERSITY HOSPITAL\', \'B2\')" style="display: inline-block;">Bus route, segment B2</a></li><br><br> Steep downward slope followed by steep upwards ramp.<br><br><img src=" survey-pictures/NUH-B2-incline.jpg" style="max-width: 100%; height: auto;"><br><br><img src="survey-pictures/NUH-B2-incline-uw-1.jpg" style="max-width: 100%; height: auto;"><br><br><img src="survey-pictures/NUH-B2-incline-uw-2.jpg" style="max-width: 100%; height: auto;"><br><br>';
+                'No staircase needed to access hospital.';
 }
             else if (hospName === "NG TENG FONG GENERAL HOSPITAL") {
                 content +=
-                'No significant path inclination encountered.<br><br>';
+                'No staircase needed to access hospital.';
             }
             else if (hospName === "SENGKANG GENERAL HOSPITAL") {
                 content +=
-                '<li><a href="#" onclick="zoomToPolyline(\'SENGKANG GENERAL HOSPITAL\', \'B1\')" style="display: inline-block;">Bus route, segment B1</a></li> Moderate upward ramp present<br><br><img src="survey-pictures/SKH-B1-incline.jpg" style="max-width: 100%; height: auto;"><br><br>';
+                'No staircase needed to access hospital.';
             }
             else if (hospName === "SINGAPORE GENERAL HOSPITAL") {
                 content +=
-                '<li><a href="#" onclick="zoomToPolyline(\'SINGAPORE GENERAL HOSPITAL\', \'B1\')" style="display: inline-block;">Bus route, segment B1</a></li> Moderate upward slope present.<br><br><img src="survey-pictures/SGH-B1-incline.jpg" style="max-width: 100%; height: auto;"><br><br><li><a href="#" onclick="zoomToPolyline(\'SINGAPORE GENERAL HOSPITAL\', \'B4\')" style="display: inline-block;">Bus route, segment B4</a></li>Moderate upward slope present.<br><br><img src="survey-pictures/SGH-B4-incline.jpg" style="max-width: 100%; height: auto;"> <br><br>';
+                'No staircase needed to access hospital.';
 }
             else if (hospName === "TAN TOCK SENG HOSPITAL") {
                 content +=
-                '<li><a href="#" onclick="zoomToPolyline(\'TAN TOCK SENG HOSPITAL\', \'M1\')" style="display: inline-block;"> MRT route, segment M1</a ></li> Moderate upwards slope present<br><br><img src="survey-pictures/TTSH-M1-incline.jpg" style="max-width: 100%; height: auto;"><br><br><li><a href="#" onclick="zoomToPolyline(\'TAN TOCK SENG HOSPITAL\', \'M2\')" style="display: inline-block;"> MRT route, segment M2</a ></li>A steep upward ramp as an alternative to stairs, potentially compelling pedestrians to seek the lift behind the stairs when it is wet and slippery.<br><br><img src="survey-pictures/TTSH-M2-stairs.jpg" style="max-width: 100%; height: auto;"><br><br><li><a href="#" onclick="zoomToPolyline(\'TAN TOCK SENG HOSPITAL\', \'B1\')" style="display: inline-block;">Bus route, segment B1</a></li> Moderate upward slope present.<br><br><img src="survey-pictures/TTSH-B1-incline.jpg" style="max-width: 100%; height: auto;"> <br><br><li><a href="#" onclick="zoomToPolyline(\'TAN TOCK SENG HOSPITAL\', \'B2\')" style="display: inline-block;">Bus route, segment B2</a></li> Moderate upward slope present, inside the Square 2 Mall that had a linkbridge to TTSH<br><br><img src="survey-pictures/TTSH-B2-incline.jpg" style="max-width: 100%; height: auto;"><br><br><li><a href="#" onclick="zoomToPolyline(\'TAN TOCK SENG HOSPITAL\', \'B4\')" style="display: inline-block;">Bus route, segment B4</a></li> Moderate downward slope present, inside TTSH<br><br><img src="survey-pictures/TTSH-B4-incline.jpg" style="max-width: 100%; height: auto;"> <br><img src="survey-pictures/TTSH-B4-incline.jpg" style="max-width: 100%; height: auto;"><br><br>';
+                '<li><a href="#" onclick="zoomToPolyline(\'TAN TOCK SENG HOSPITAL\', \'M2\')" style="display: inline-block;">MRT route, segment M2</a ></li> Ramp or lift (behind staircase) as an alternative to stairs. Most (mobile) pedestrians were observed to use the ramp instead of the staircase or lift, from the MRT station. There was wayfinding signage to the lift.<br><br><img src="survey-pictures/TTSH-M2-stairs.jpg" style="max-width: 100%; height: auto;"><br><br>';
 } else {
                 content = "";
             }
@@ -331,8 +332,8 @@
                     const SOCname = row.SOCname;
                     const mrtNameExit = row.mrtNameExit;
                     const busLocation = row.busLocation1;
-                    const mean_mrt = row.mean_incline_MRT;
-                    const mean_bus = row.mean_incline_Bus;
+                    const mean_mrt = row.mean_stairs_MRT;
+                    const mean_bus = row.mean_stairs_Bus;
 
                     const hospName = clinicName;
 
@@ -403,7 +404,7 @@
                 const data = results.data;
 
                 // Define the color scale for the intensity levels
-                const colorScale = chroma.scale(["green", "orange", "red"]).domain([4, 1]);
+                const colorScale = chroma.scale(["green", "orange", "red"]).domain([5, 1]);
 
                 // Process the data columns
                 for (let i = 0; i < data.length; i++) {
@@ -412,7 +413,7 @@
                     const hospName = row.hospName;
                     const segment = row.segment;
                     const paths_involved = row.paths_involved;
-                    const incline = row.incline !== null && row.incline !== undefined ? Number.parseFloat(row.incline.toFixed(1)) : "";
+                    const stairs = row.stairs !== null && row.stairs !== undefined ? Number.parseFloat(row.stairs.toFixed(1)) : "";
 
                     if (geometry && typeof geometry === "string") {
                         // Extract coordinates from LINESTRING
@@ -428,7 +429,7 @@
 
                         // Create polylines from the coordinates
                         const polyline = L.polyline(coordinates, {
-                            color: colorScale(incline).hex(),
+                            color: colorScale(stairs).hex(),
                             opacity: 0.8,
                             weight: 5, // Set the thickness of the polyline
                             hospName: hospName, // Store hospName as a property of the polyline
@@ -436,7 +437,7 @@
                         }).addTo(map);
 
                         // Create a tooltip content with 'hospName' and 'segment'
-                        const tooltipContent = `<b>${hospName}</b><br>Segment: ${segment}<br>Path types: ${paths_involved}<br>Slopes score: ${incline} / 4`;
+                        const tooltipContent = `<b>${hospName}</b><br>Segment: ${segment}<br>Path types: ${paths_involved}<br>Stairs score: ${stairs} / 5`;
 
                         // Add a tooltip to the polyline
                         polyline.bindTooltip(tooltipContent, {
