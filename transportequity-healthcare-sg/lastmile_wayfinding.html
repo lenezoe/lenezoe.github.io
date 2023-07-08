@@ -417,7 +417,7 @@
                     const hospName = row.hospName;
                     const segment = row.segment;
                     const paths_involved = row.paths_involved;
-                    const wayfinding_checklist = row.wayfinding_checklist;
+                    const wayfinding_checklist = row.wayfinding_checklist !== null && row.wayfinding_checklist !== undefined ? Number.parseFloat(row.wayfinding_checklist.toFixed(1)) : "";
 
                     if (geometry && typeof geometry === "string") {
                         // Extract coordinates from LINESTRING

@@ -412,7 +412,7 @@
                     const hospName = row.hospName;
                     const segment = row.segment;
                     const paths_involved = row.paths_involved;
-                    const vehicular_protect = row.vehicular_protect;
+                    const vehicular_protect = row.vehicular_protect !== null && row.vehicular_protect !== undefined ? Number.parseFloat(row.vehicular_protect.toFixed(1)) : "";
 
                     if (geometry && typeof geometry === "string") {
                         // Extract coordinates from LINESTRING
