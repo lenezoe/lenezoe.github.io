@@ -113,15 +113,15 @@
     <div id="map"></div>
     <div id="sidebar">
         <div id="top">
-            <h1>Pavement Width</h1>
-            <h2>Score for footpath segments (out of 5)</h2>
+            <h1>Shelter/Shade</h1>
+            <h2>Score for footpath/crossing segments (out of 3)</h2>
             <p>
+                Shelter/shade refers to vegetation, covered walkways, buildings or other man-made structures that
+                provide cover from weather elements.
             <ul>
-                <li>1 – PW < 1.2 m</li>
-                <li>2 – 0.90 m ≤ PW < 1.20 m (1 person using crutches) </li>
-                <li>3 – 1.20 m ≤ PW < 1.50 m (1 person with escort or 1 wheelchair)</li>
-                <li>4 – 1.50 m ≤ PW < 1.80 m (1 wheelchair + 1 individual)</li>
-                <li>5 – PW ≥ 1.8m (2 wheelchairs))</li>
+                <li>1 – Entirely exposed to weather elements</li>
+                <li>2 – Partially exposed to weather elements</li>
+                <li>3 – Full protection from weather elements</li>
             </ul>
             </p>
             <table>
@@ -152,36 +152,36 @@
 
             if (hospName === "ALEXANDRA HOSPITAL") {
                 content +=
-                    '<li><a href="#" onclick="zoomToPolyline(\'ALEXANDRA HOSPITAL\', \'B5\')" style="display: inline-block;">Bus route, segment B5</a></li>PW was narrowest in Segment B5 (PW < 1.2 m) which was not sufficiently wide for a wheelchair. Wheelchair users would have to make a detour on the road itself.<br><br><img src="survey-pictures/AH-B5-pavementwidth.jpg" style="max-width: 100%; height: auto;"><br><br><li><a href="#" onclick="zoomToPolyline(\'ALEXANDRA HOSPITAL\', \'B2\')" style="display: inline-block;">Bus route, segment B2</a></li>PW was also narrow in Segment B2 (0.90 m ≤ PW < 1.20 m), sufficiently wide only for 1 person on crutches but not a wheelchair<br><br><img src="survey-pictures/AH-B2-pavementwidth.jpg" " style="max-width: 100%; height: auto;"><br><br><li><a href="#" onclick="zoomToPolyline(\'ALEXANDRA HOSPITAL\', \'B3\')" style="display: inline-block;">Bus route, segment B3</a></li> PW was also narrow in Segment B3 (1.20 m ≤ PW < 1.50 m), sufficiently wide only for 2 people or a wheelchair<br><br>≥ 1.8m throughout other segments.<br><br>';
+                    '<li> Bus route, <a href="#" onclick="zoomToPolyline(\'ALEXANDRA HOSPITAL\', \'B1\')" style="display: inline-block;"> segment B1</a>, <a href="#" onclick="zoomToPolyline(\'ALEXANDRA HOSPITAL\', \'B2\')" style="display: inline-block;"> segment B2</a>, <a href="#" onclick="zoomToPolyline(\'ALEXANDRA HOSPITAL\', \'B3\')" style="display: inline-block;"> segment B3</a>, <a href="#" onclick="zoomToPolyline(\'ALEXANDRA HOSPITAL\', \'B4\')" style="display: inline-block;"> segment B4</a>, <a href="#" onclick="zoomToPolyline(\'ALEXANDRA HOSPITAL\', \'B5\')" style="display: inline-block;"> segment B5</a>, <a href="#" onclick="zoomToPolyline(\'ALEXANDRA HOSPITAL\', \'B6\')" style="display: inline-block;"> segment B6</a></li>Outdoors, entirely unsheltered. Nonetheless, segments B1 to B4 were potentially avoidable after construction works for the new direct sheltered path were completed. <br><br>';
             }
             else if (hospName === "CHANGI GENERAL HOSPITAL") {
                 content +=
-                    '<li><a href="#" onclick="zoomToPolyline(\'CHANGI GENERAL HOSPITAL\', \'B1\')" style="display: inline-block;">Bus route, segment B1</a></li>PW was narrowest in Segment B1 but was sufficiently wide for 2 people or a wheelchair (1.20 m ≤ PW < 1.50 m)<br><br>≥ 1.8m throughout other segments.<br><br>';
+                    ' Fully sheltered from MRT station and/or bus stop to hospital<br><br>';
             }
             else if (hospName === "KHOO TECK PUAT HOSPITAL") {
                 content +=
-                    ' PW ≥ 1.8m throughout all segments<br><br>';
+                    ' Fully sheltered from MRT station and/or bus stop to hospital<br><br>';
             }
             else if (hospName === "NATIONAL UNIVERSITY HOSPITAL") {
                 content +=
-                    '<li> <a href="#" onclick="zoomToPolyline(\'NATIONAL UNIVERSITY HOSPITAL\', \'B2\')" style="display: inline-block;">Bus route, segment B2</a></li>PW was narrowest in segment B2 (0.90 m ≤ PW < 1.20 m), with the door sufficiently wide only for 1 person on crutches but not a wheelchair<br><br><img src="survey-pictures/NUH-B2-pavementwidth.jpg" style="max-width: 100%; height: auto;"> <br><br><li> <a href="#" onclick="zoomToPolyline(\'NATIONAL UNIVERSITY HOSPITAL\', \'B1\')" style="display: inline-block;">Bus route, segment B1</a></li> Segment B1 was narrow but sufficiently wide for 2 people or a wheelchair (1.20 m ≤ PW < 1.50 m)<br><br> 1.8m throughout other segments.<br><br>';
+                    'MRT route was entirely sheltered. <br><br><li>Bus route, <a href="#" onclick="zoomToPolyline(\'NATIONAL UNIVERSITY HOSPITAL\', \'B1\')" style="display: inline-block;">segment B1</a>, <a href="#" onclick="zoomToPolyline(\'NATIONAL UNIVERSITY HOSPITAL\', \'B2\')" style="display: inline-block;">segment B2</a></li>Outdoors, entirely unsheltered. B2 was partially sheltered by the NUH building.<br><br>';
             }
             else if (hospName === "NG TENG FONG GENERAL HOSPITAL") {
                 content +=
-                '<li> Bus route, <a href="#" onclick="zoomToPolyline(\'NG TENG FONG GENERAL HOSPITAL\', \'B1\')" style="display: inline-block;"> segment B1</a>, <a href="#" onclick="zoomToPolyline(\'NG TENG FONG GENERAL HOSPITAL\', \'B2\')" style="display: inline-block;"> segment B2</a></li>PW was narrowest in segments B1 and B2 but they were sufficiently wide for 2 people or a wheelchair (1.20 m ≤ PW < 1.50 m)<br><br><img src="survey-pictures/NTFGH-B1-pavementwidth.jpg" style="max-width: 100%; height: auto;"><br><br>≥ 1.8m throughout other segments.<br><br>';
+                    ' Fully sheltered from MRT station and/or bus stop to hospital<br><br>';
             }
             else if (hospName === "SENGKANG GENERAL HOSPITAL") {
                 content +=
-                '<li><a href="#" onclick="zoomToPolyline(\'SENGKANG GENERAL HOSPITAL\', \'M2\')" style="display: inline-block;"> MRT route, segment M2</a></li>PW was narrowest in segment M2 (1.20 m ≤ PW < 1.50 m), sufficiently wide only for 2 people or a wheelchair<br><br><img src="survey-pictures/SKH-M2-pavementwidth.jpg" style="max-width: 100%; height: auto;"><br><br>Segments M1 and B1 were sufficiently wide for a wheelchair and another pedestrian (1.50 m ≤ PW < 1.80 m)<br><br>Full protection from or no vehicular traffic along other segments.<br><br>';
-}
+                    ' Fully sheltered from MRT station and/or bus stop to hospital<br><br>';
+            }
             else if (hospName === "SINGAPORE GENERAL HOSPITAL") {
                 content +=
-                '<li><a href="#" onclick="zoomToPolyline(\'SINGAPORE GENERAL HOSPITAL\', \'B2\')" style="display: inline-block;">Bus route, segment B2</a></li>PW was narrowest but sufficiently wide for a wheelchair and another pedestrian in segment B2 (1.50 m ≤ PW < 1.80 m)<br><br>≥ 1.8m throughout other segments.<br><br>';
-}
+                    ' Fully sheltered from MRT station and/or bus stop to hospital<br><br>';
+            }
             else if (hospName === "TAN TOCK SENG HOSPITAL") {
                 content +=
-                '<li><a href="#" onclick="zoomToPolyline(\'TAN TOCK SENG HOSPITAL\', \'M2\')" style="display: inline-block;">MRT route, segment M2</a >, Bus route, <a href="#" onclick="zoomToPolyline(\'TAN TOCK SENG HOSPITAL\', \'B1\')" style="display: inline-block;"> segment B1</a >, <a href="#" onclick="zoomToPolyline(\'TAN TOCK SENG HOSPITAL\', \'B2\')" style="display: inline-block;"> segment B2</a ></li>PW was narrowest but sufficiently wide for a wheelchair and another pedestrian in segments M2, B1 and B2 (1.50 m ≤ PW < 1.80 m)<br><br>≥ 1.8m throughout other segments.<br><br>';
-} else {
+                    ' Fully sheltered from MRT station and/or bus stop to hospital<br><br>';
+            } else {
                 content = "";
             }
 
@@ -332,8 +332,8 @@
                     const SOCname = row.SOCname;
                     const mrtNameExit = row.mrtNameExit;
                     const busLocation = row.busLocation1;
-                    const mean_mrt = row.mean_pavementwidth_MRT;
-                    const mean_bus = row.mean_pavementwidth_Bus;
+                    const mean_mrt = row.mean_shelter_MRT;
+                    const mean_bus = row.mean_shelter_Bus;
 
                     const hospName = clinicName;
 
@@ -404,7 +404,7 @@
                 const data = results.data;
 
                 // Define the color scale for the intensity levels
-                const colorScale = chroma.scale(["green", "orange", "red"]).domain([5, 1]);
+                const colorScale = chroma.scale(["green", "orange", "red"]).domain([3, 1]);
 
                 // Process the data columns
                 for (let i = 0; i < data.length; i++) {
@@ -413,7 +413,7 @@
                     const hospName = row.hospName;
                     const segment = row.segment;
                     const paths_involved = row.paths_involved;
-                    const pavementwidth = row.pavementwidth !== null && row.pavementwidth !== undefined ? Number.parseFloat(row.pavementwidth.toFixed(1)) : "";
+                    const shelter = row.shelter !== null && row.shelter !== undefined ? Number.parseFloat(row.shelter.toFixed(1)) : "";
                     if (geometry && typeof geometry === "string") {
                         // Extract coordinates from LINESTRING
                         const coordinates = geometry
@@ -428,7 +428,7 @@
 
                         // Create polylines from the coordinates
                         const polyline = L.polyline(coordinates, {
-                            color: colorScale(pavementwidth).hex(),
+                            color: colorScale(shelter).hex(),
                             opacity: 0.8,
                             weight: 5, // Set the thickness of the polyline
                             hospName: hospName, // Store hospName as a property of the polyline
@@ -436,7 +436,7 @@
                         }).addTo(map);
 
                         // Create a tooltip content with 'hospName' and 'segment'
-                        const tooltipContent = `<b>${hospName}</b><br>Segment: ${segment}<br>Path types: ${paths_involved}<br>Pavement width score: ${pavementwidth} / 5`;
+                        const tooltipContent = `<b>${hospName}</b><br>Segment: ${segment}<br>Path types: ${paths_involved}<br>Shelter score: ${shelter} / 3`;
 
                         // Add a tooltip to the polyline
                         polyline.bindTooltip(tooltipContent, {
