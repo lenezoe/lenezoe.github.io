@@ -3138,10 +3138,10 @@
 <body>
     <div id="top-page"></div> <amp-animation id="showScrollToTopAnim" layout="nodisplay">
         <script
-            type="application/json">                                             {                                                 "duration": "200ms",                                                 "fill": "both",                                                 "iterations": "1",                                                 "direction": "alternate",                                                 "animations": [                                                     {                                                         "selector": "#scrollToTopButton",                                                         "keyframes": [                                                             { "opacity": "0.4", "visibility": "visible" }                                                         ]                                                     }                                                 ]                                             }                                             </script>
+            type="application/json">                                             {                                                 "time": "200ms",                                                 "fill": "both",                                                 "iterations": "1",                                                 "direction": "alternate",                                                 "animations": [                                                     {                                                         "selector": "#scrollToTopButton",                                                         "keyframes": [                                                             { "opacity": "0.4", "visibility": "visible" }                                                         ]                                                     }                                                 ]                                             }                                             </script>
     </amp-animation> <amp-animation id="hideScrollToTopAnim" layout="nodisplay">
         <script
-            type="application/json">                                             {                                                 "duration": "200ms",                                                 "fill": "both",                                                 "iterations": "1",                                                 "direction": "alternate",                                                 "animations": [                                                     {                                                         "selector": "#scrollToTopButton",                                                         "keyframes": [                                                             { "opacity": "0", "visibility": "hidden" }                                                         ]                                                     }                                                 ]                                             }                                             </script>
+            type="application/json">                                             {                                                 "time": "200ms",                                                 "fill": "both",                                                 "iterations": "1",                                                 "direction": "alternate",                                                 "animations": [                                                     {                                                         "selector": "#scrollToTopButton",                                                         "keyframes": [                                                             { "opacity": "0", "visibility": "hidden" }                                                         ]                                                     }                                                 ]                                             }                                             </script>
     </amp-animation>
     <div id="scrollToTopMarker"> <amp-position-observer
             on="enter:hideScrollToTopAnim.start; exit:showScrollToTopAnim.start" layout="nodisplay">
@@ -3271,7 +3271,7 @@
                             </h1>
                             <p class="mbr-text mbr-fonts-style mbr-white display-3">
                                 Determine the <strong>relative accessibility</strong> of healthcare services by comparing the
-                                <strong></strong>travel durations and costs</strong> between public transport
+                                <strong></strong>travel times and costs</strong> between public transport
                                 and private vehicle travel modes, and last-mile proximity
                                 from transit stops  for community-dwelling seniors in Singapore.<br>
                                 <div class="mbr-section-btn mbr-pt-3"><a class="btn-primary btn btn-md display-4"
@@ -3367,10 +3367,10 @@
                                     <div class="list-box">
 
                                         <p class="mbr-text mbr-fonts-style mbr-regular display-7">
-                                            <strong>Absolute and relative accessibility in terms of travel duration and costs</strong>
+                                            <strong>Absolute and relative accessibility in terms of travel time and costs</strong>
                                             from each subzone to each target healthcare facility, using <strong>public transport</strong> versus a <strong>private vehicle</strong>.</p>
                                         The public transport/walking duration for each subzone:healthcare facility
-                                        pair was assumed to be the fastest (minimum) travel duration across the 7
+                                        pair was assumed to be the fastest (minimum) travel time across the 7
                                         selected Google’s Distance Matrix API travel modes </p>
                                     </div>
                                 </div>
@@ -3679,19 +3679,70 @@
                 </div>
             </center>
     </section>
+
+    <section class="teams1 cid-r5jZHCuWND" id="findings-spatial">
+        <div class="title-wrap mbr-pb-4 align-center">
+                <h4 class="mbr-section-title mbr-semibold display-5">Public Transport:Private Vehicle Travel Time Ratios
+                </h4>
+                <br>
+                <h4 class="mbr-section-title display-6">(A) Restructured Hospitals
+                </h4>
+        
+        <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/heatchoro_RH.html"
+            frameborder="0" width="90%" height="550px"></iframe>
+
+            <center>
+                <div class="mbr-section-btn mbr-pt-3">
+                    <a class="btn btn-md btn-primary-outline display-4" href="#method-1">
+                        Back to Part One</a>
+                </div>
+            </center>
+
+        </div>
+</section>
+
+<section class="header4 cid-r9" id="findings-spatial-CH">
+    <div class="title-wrap mbr-pb-4 align-center">
+        <h4 class="mbr-section-title display-6">(B) Community Hospitals
+    </h4>
+    <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/heatchoro_CH.html"
+        frameborder="0" width="90%" height="550px"></iframe>
+
+        <center>
+            <div class="mbr-section-btn mbr-pt-3">
+                <a class="btn btn-md btn-primary-outline display-4" href="#method-1">
+                    Back to Part One</a>
+            </div>
+        </center>
+    </div>
+</section>
+
+<section class="header4 cid-r9" id="findings-spatial-poly">
+    <div class="title-wrap mbr-pb-4 align-center">
+        <h4 class="mbr-section-title display-6">(C) Polyclinics
+    </h4>
+    <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/heatchoro_poly.html"
+        frameborder="0" width="90%" height="550px"></iframe>
+
+        <center>
+            <div class="mbr-section-btn mbr-pt-3">
+                <a class="btn btn-md btn-primary-outline display-4" href="#method-1">
+                    Back to Part One</a>
+            </div>
+        </center>
+    </div>
+</section>
     <section class="teams1 cid-r5jZHCuWND" id="findings">
 
-        <div class="container">
             <div class="title-wrap mbr-pb-4 align-center">
                 <h3 class="mbr-section-title mbr-semibold mbr-fonts-style display-2">Walkability Assessment Findings
                 </h3>
-
             </div>
 
         </section>
     <section class="header4 cid-r9" id="findings-obstacles">
         <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/lastmilemap_obstacles.html"
-            frameborder="0" width="100%" height="600px"></iframe>
+            frameborder="0" width="100%" height="550px"></iframe>
         <center>
             <div class="mbr-section-btn mbr-pt-3">
                 <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
@@ -3702,7 +3753,7 @@
 <section class="header4 cid-r9" id="findings-levelchange">
     
     <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/lastmile_levelchange.html"
-        frameborder="0" width="100%" height="600px"></iframe>
+        frameborder="0" width="100%" height="550px"></iframe>
     <center>
         <div class="mbr-section-btn mbr-pt-3">
             <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
@@ -3712,7 +3763,7 @@
 </section>
     <section class="header4 cid-r9" id="findings-stairs">
         <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/lastmile_stairs.html" frameborder="0"
-            width="100%" height="600px"></iframe>
+            width="100%" height="550px"></iframe>
         <center>
             <div class="mbr-section-btn mbr-pt-3">
                 <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
@@ -3722,7 +3773,7 @@
     </section>
     <section class="header4 cid-r9" id="findings-incline">
         <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/lastmile_incline.html" frameborder="0"
-            width="100%" height="600px"></iframe>
+            width="100%" height="550px"></iframe>
         <center>
             <div class="mbr-section-btn mbr-pt-3">
                 <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
@@ -3732,7 +3783,7 @@
     </section>
     <section class="header4 cid-r9" id="findings-wayfinding">
         <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/lastmile_wayfinding.html" frameborder="0"
-            width="100%" height="600px"></iframe>
+            width="100%" height="550px"></iframe>
         <center>
             <div class="mbr-section-btn mbr-pt-3">
                 <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
@@ -3743,7 +3794,7 @@
 
     <section class="header4 cid-r9" id="findings-vehicularprotect">
         <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/lastmile_vehicularprotection.html"
-            frameborder="0" width="100%" height="600px"></iframe>
+            frameborder="0" width="100%" height="550px"></iframe>
         <center>
             <div class="mbr-section-btn mbr-pt-3">
                 <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
@@ -3754,7 +3805,7 @@
 
     <section class="header4 cid-r9" id="findings-pavementquality">
         <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/lastmile_pavementquality.html"
-            frameborder="0" width="100%" height="600px"></iframe>
+            frameborder="0" width="100%" height="550px"></iframe>
         <center>
             <div class="mbr-section-btn mbr-pt-3">
                 <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
@@ -3764,7 +3815,7 @@
     </section>
     <section class="header4 cid-r9" id="findings-pavementwidth">
         <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/lastmile_pavementwidth.html"
-            frameborder="0" width="100%" height="600px"></iframe>
+            frameborder="0" width="100%" height="550px"></iframe>
         <center>
             <div class="mbr-section-btn mbr-pt-3">
                 <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
@@ -3775,7 +3826,7 @@
 
     <section class="header4 cid-r9" id="findings-shelter">
         <iframe src="https://lenezoe.github.io/transportequity-healthcare-sg/lastmile_shelter.html"
-            frameborder="0" width="100%" height="600px"></iframe>
+            frameborder="0" width="100%" height="550px"></iframe>
         <center>
             <div class="mbr-section-btn mbr-pt-3">
                 <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
@@ -3909,7 +3960,7 @@
 
 
 
-    <button id="scrollToTopButton" on="tap:top-page.scrollTo(duration=200)">
+    <button id="scrollToTopButton" on="tap:top-page.scrollTo(time=200)">
         <a class="scroll-to-top-arrow"></a> </button>
 </body>
 
