@@ -978,6 +978,13 @@
             width: 100%;
         }
 
+        img.totalwalk-image {
+            width: 1477px;
+            height: 761px;
+            display: block; 
+            margin: 0 auto;
+        }
+
         .rounded {
             border-radius: 50%;
         }
@@ -3270,13 +3277,14 @@
                             <h1 class="mbr-section-title mbr-fonts-style mbr-bold mbr-white mbr-pb-1 display-2">AIM ONE
                             </h1>
                             <p class="mbr-text mbr-fonts-style mbr-white display-3">
-                                Determine the <strong>relative accessibility</strong> of healthcare services by comparing the
+                                Determine the <strong>relative accessibility</strong> of healthcare services by
+                                comparing the
                                 <strong></strong>travel times and costs</strong> between public transport
                                 and private vehicle travel modes, and last-mile proximity
-                                from transit stops  for community-dwelling seniors in Singapore.<br>
-                                <div class="mbr-section-btn mbr-pt-3"><a class="btn-primary btn btn-md display-4"
+                                from transit stops for community-dwelling seniors in Singapore.<br>
+                            <div class="mbr-section-btn mbr-pt-3"><a class="btn-primary btn btn-md display-4"
                                     href="#method-1">
-                                 Part One - Spatial Analysis Methodology</a></div>
+                                    Part One - Spatial Analysis Methodology</a></div>
                             </p>
 
                         </div>
@@ -3301,9 +3309,10 @@
                                 transport
                                 services might face when making the last-mile trip from the nearest transit stop to
                                 healthcare facilities in Singapore. <br>
-                                <div class="mbr-section-btn mbr-pt-3"><a class="btn-primary btn btn-md display-4"
+                            <div class="mbr-section-btn mbr-pt-3"><a class="btn-primary btn btn-md display-4"
                                     href="#method-2">
-                                    PART Two - Walkability Assessment Methodology</a></div></p>
+                                    PART Two - Walkability Assessment Methodology</a></div>
+                            </p>
                         </div>
                     </div>
 
@@ -3323,66 +3332,72 @@
             <div class="mbr-row">
                 <div class="container-elements mbr-flex flex-wrap mbr-row-reverse">
 
-                        </amp-img>
-                    </div>
-                    <div class="second-element mbr-flex mbr-col-sm-12 mbr-col-md-12">
-                        <div class="second-element-box mbr-m-auto">
-                            <h2 class="element-title mbr-fonts-style mbr-bold display-5">Part One: Spatial Analysis</h2>
+                    </amp-img>
+                </div>
+                <div class="second-element mbr-flex mbr-col-sm-12 mbr-col-md-12">
+                    <div class="second-element-box mbr-m-auto">
+                        <h2 class="element-title mbr-fonts-style mbr-bold display-5">Part One: Spatial Analysis</h2>
 
-                            <div class="mbr-list mbr-pt-4">
+                        <div class="mbr-list mbr-pt-4">
 
-                                <div class="mbr-flex items-list">
+                            <div class="mbr-flex items-list">
+                                <p class="mbr-text mbr-fonts-style mbr-regular display-7">
+                                    Singapore is divided into 228 residential precincts defined as “subzones” by the
+                                    Urban Redevelopment Authority (URA). 226 subzones with at least one senior
+                                    resident aged 65 and above were included in the study.
+                                    40 healthcare facilities that community-dwelling seniors are likely to access
+                                    based on their healthcare needs were included in this study, including 23
+                                    polyclinics, 8 government restructured hospitals (RHs) and 9 community hospitals
+                                    (CHs).
+                                    <br><br>
+                                    Data was extracted using <a
+                                        href="https://developers.google.com/maps/documentation/distance-matrix/overview"
+                                        target="_blank">Google Distance Matrix API</a> and <a
+                                        href="https://datamall.lta.gov.sg/content/datamall/en.html" target="_blank">LTA
+                                        DataMall</a>, and processed for analysing:
+                                </p>
+                            </div>
+                            <div class="mbr-flex items-list">
+
+                                <div class="icon-wrap">
+                                    <span class="amp-iconfont fa-clock-o fa"></span>
+                                </div>
+                                <div class="list-box">
+
                                     <p class="mbr-text mbr-fonts-style mbr-regular display-7">
-                                        Singapore is divided into 228 residential precincts defined as “subzones” by the
-                                        Urban Redevelopment Authority (URA). 226 subzones with at least one senior
-                                        resident aged 65 and above were included in the study.
-                                        40 healthcare facilities that community-dwelling seniors are likely to access
-                                        based on their healthcare needs were included in this study, including 23
-                                        polyclinics, 8 government restructured hospitals (RHs) and 9 community hospitals
-                                        (CHs).
-                                        <br><br>
-                                        Data was extracted using <a
-                                            href="https://developers.google.com/maps/documentation/distance-matrix/overview"
-                                            target="_blank">Google Distance Matrix API</a> and <a
-                                            href="https://datamall.lta.gov.sg/content/datamall/en.html"
-                                            target="_blank">LTA DataMall</a>, and processed for analysing:
+                                        <strong>Absolute and relative accessibility in terms of travel time and
+                                            costs</strong>
+                                        from each subzone to each target healthcare facility, using <strong>public
+                                            transport</strong> versus a <strong>private vehicle</strong>.
+                                    </p>
+                                    The public transport/walking time for each subzone:healthcare facility
+                                    pair was assumed to be the fastest (minimum) travel time across 7 public transit
+                                    modes using Google’s Distance Matrix API.</p>
+                                </div>
+                            </div>
+                            <div class="mbr-flex items-list">
+
+                                <div class="icon-wrap">
+                                    <span class="amp-iconfont fa-wheelchair-alt fa"></span>
+                                </div>
+                                <div class="list-box">
+
+                                    <p class="mbr-text mbr-fonts-style mbr-regular display-7">
+                                        <strong>Last-mile walking distances</strong> from nearest transit stop to each
+                                        healthcare
+                                        facility.
                                     </p>
                                 </div>
-                                <div class="mbr-flex items-list">
-
-                                    <div class="icon-wrap">
-                                        <span class="amp-iconfont fa-clock-o fa"></span>
-                                    </div>
-                                    <div class="list-box">
-
-                                        <p class="mbr-text mbr-fonts-style mbr-regular display-7">
-                                            <strong>Absolute and relative accessibility in terms of travel time and costs</strong>
-                                            from each subzone to each target healthcare facility, using <strong>public transport</strong> versus a <strong>private vehicle</strong>.</p>
-                                        The public transport/walking time for each subzone:healthcare facility
-                                        pair was assumed to be the fastest (minimum) travel time across 7 public transit modes using Google’s Distance Matrix API.</p>
-                                    </div>
-                                </div>
-                                <div class="mbr-flex items-list">
-
-                                    <div class="icon-wrap">
-                                        <span class="amp-iconfont fa-wheelchair-alt fa"></span>
-                                    </div>
-                                    <div class="list-box">
-
-                                        <p class="mbr-text mbr-fonts-style mbr-regular display-7">
-                                            <strong>Last-mile walking distances</strong> from nearest transit stop to each healthcare
-                                            facility. </p>
-                                    </div>
-                                </div>
-
-                                <div class="mbr-section-btn mbr-pt-3"><a class="btn-primary btn btn-md display-4"
-                                        href="#findings-1">
-                                        PART ONE FINDINGS</a></div>
                             </div>
+
+                            <div class="mbr-section-btn mbr-pt-3"><a class="btn-primary btn btn-md display-4"
+                                    href="#findings-1">
+                                    PART ONE FINDINGS</a></div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
     <section class="header4 cid-r9" id="method-2">
@@ -3417,7 +3432,8 @@
                                 The assessment involved a survey of the last-mile routes - from the nearest MRT
                                 station* or bus stop - to each of the 8 RHs, by three researchers (May to June 2023).
                                 <br><br>The walkability survey instrument was developed comprising eleven variables
-                                representing three walkability dimensions (convenience, safety and comfort) that have been 
+                                representing three walkability dimensions (convenience, safety and comfort) that have
+                                been
                                 found to affect seniors' walking behaviours in research.
                             </p>
                             <div class="mbr-section-btn mbr-pt-3"><a class="btn-primary btn btn-md display-4"
@@ -3556,12 +3572,20 @@
                                 Comfort entails ensuring pathways are easy to use, and provide protection from weather
                                 elements. Assessing comfort focuses on the observation area of pavement conditions:<br>
                             <ul>
-                                <li><a href="#findings-pavementquality">Pavement quality</a> (condition of the pavement, taking into account the presence of
+                                <li><a href="#findings-pavementquality">Pavement quality</a> (condition of the pavement,
+                                    taking into account the presence of
                                     cracks or unevenness)</li>
-                                <li><a href="#findings-pavementwidth">Pavement width</a> (narrowest part through which pedestrians must navigate, avoiding
+                                <li><a href="#findings-pavementwidth">Pavement width</a> (narrowest part through which
+                                    pedestrians must navigate, avoiding
                                     vegetation and obstacles)</li>
                                 <li><a href="#findings-shelter">Shelter/shade</a> from weather elements</li>
                             </ul>
+                            </p>
+                            <br>
+                            <p>
+                                <a class="card-title mbr-fonts-style mbr-bold display-2 btn btn-md btn-primary-outline display-4"
+                                    href="#findings-2-total">
+                                    Total Walkability Scores</a> (Across all 11 variables)
                             </p>
                         </div>
                     </div>
@@ -3571,8 +3595,15 @@
             </div>
         </div>
     </section>
+    <section class="header4 cid-r9" id="dimensions-end">
 
-
+        <center>
+            <div class="mbr-section-btn mbr-pt-3">
+                <a class="btn btn-md btn-primary-outline display-4" href="#method-2">
+                    Back to Part Two Methodology</a>
+            </div>
+        </center>
+    </section>
     <section class="header3 cid-r5jZrhJca3" id="findings-1">
 
 
@@ -3631,9 +3662,9 @@
                                             <h4 class="mbr-fonts-style mbr-bold display-6">%</h4>
                                         </div>
                                         <p class="mbr-text mbr-fonts-style mbr-semibold display-4">
-                                            of travel costs</p> 
+                                            of travel costs</p>
                                     </div>
-                                
+
                                     <div class="mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-6">
                                         <div class="numeral mbr-flex">
                                             <h4 class="mbr-fonts-style mbr-bold display-5">18.3
@@ -3642,17 +3673,20 @@
                                         </div>
                                         <p class="mbr-text mbr-fonts-style mbr-semibold display-4">
                                             longer travel time</p>
-                                            <p class="mbr-text element-text mbr-fonts-style mbr-regular display-4 mbr-pt-3">making public transport a less attractive option for seniors who can afford taking private vehicles.</p>
+                                        <p class="mbr-text element-text mbr-fonts-style mbr-regular display-4 mbr-pt-3">
+                                            making public transport a less attractive option for seniors who can afford
+                                            taking private vehicles.</p>
 
                                     </div>
-                                        <div class="mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-6">
+                                    <div class="mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-6">
                                         <div class="numeral mbr-flex">
                                             <h4 class="mbr-fonts-style mbr-bold display-5">$6.75</h4>
                                             <h4 class="mbr-fonts-style mbr-bold display-6"></h4>
                                         </div>
                                         <p class="mbr-text mbr-fonts-style mbr-semibold display-4">
                                             less travel cost</p>
-                                            <p class="mbr-text element-text mbr-fonts-style mbr-regular display-4 mbr-pt-3">compelling price-sensitive seniors to continue using public transport.</p>
+                                        <p class="mbr-text element-text mbr-fonts-style mbr-regular display-4 mbr-pt-3">
+                                            compelling price-sensitive seniors to continue using public transport.</p>
 
                                     </div>
                                 </div>
@@ -3671,14 +3705,14 @@
 
     <section class="teams1 cid-r5jZHCuWND" id="findings-spatial">
         <div class="title-wrap mbr-pb-4 align-center">
-                <h4 class="mbr-section-title mbr-semibold display-5">Public Transport:Private Vehicle Travel Time Ratios
-                </h4>
-                <br>
-                <h4 class="mbr-section-title display-6">(A) Restructured Hospitals
-                </h4>
-        
-        <iframe src="https://lenezoe.github.io/transportequity-healthcare/heatchoro_RH.html"
-            frameborder="0" width="90%" height="550px"></iframe>
+            <h4 class="mbr-section-title mbr-semibold display-5">Public Transport:Private Vehicle Travel Time Ratios
+            </h4>
+            <br>
+            <h4 class="mbr-section-title display-6">(A) Restructured Hospitals
+            </h4>
+
+            <iframe src="https://lenezoe.github.io/transportequity-healthcare/heatchoro_RH.html" frameborder="0"
+                width="90%" height="550px"></iframe>
 
             <center>
                 <div class="mbr-section-btn mbr-pt-3">
@@ -3688,68 +3722,68 @@
             </center>
 
         </div>
-</section>
+    </section>
 
-<section class="header4 cid-r9" id="findings-spatial-CH">
-    <div class="title-wrap mbr-pb-4 align-center">
-        <h4 class="mbr-section-title display-6">(B) Community Hospitals
-    </h4>
-    <iframe src="https://lenezoe.github.io/transportequity-healthcare/heatchoro_CH.html"
-        frameborder="0" width="90%" height="550px"></iframe>
+    <section class="header4 cid-r9" id="findings-spatial-CH">
+        <div class="title-wrap mbr-pb-4 align-center">
+            <h4 class="mbr-section-title display-6">(B) Community Hospitals
+            </h4>
+            <iframe src="https://lenezoe.github.io/transportequity-healthcare/heatchoro_CH.html" frameborder="0"
+                width="90%" height="550px"></iframe>
 
-        <center>
-            <div class="mbr-section-btn mbr-pt-3">
-                <a class="btn btn-md btn-primary-outline display-4" href="#method-1">
-                    Back to Part One</a>
-            </div>
-        </center>
-    </div>
-</section>
+            <center>
+                <div class="mbr-section-btn mbr-pt-3">
+                    <a class="btn btn-md btn-primary-outline display-4" href="#method-1">
+                        Back to Part One</a>
+                </div>
+            </center>
+        </div>
+    </section>
 
-<section class="header4 cid-r9" id="findings-spatial-poly">
-    <div class="title-wrap mbr-pb-4 align-center">
-        <h4 class="mbr-section-title display-6">(C) Polyclinics
-    </h4>
-    <iframe src="https://lenezoe.github.io/transportequity-healthcare/heatchoro_poly.html"
-        frameborder="0" width="90%" height="550px"></iframe>
+    <section class="header4 cid-r9" id="findings-spatial-poly">
+        <div class="title-wrap mbr-pb-4 align-center">
+            <h4 class="mbr-section-title display-6">(C) Polyclinics
+            </h4>
+            <iframe src="https://lenezoe.github.io/transportequity-healthcare/heatchoro_poly.html" frameborder="0"
+                width="90%" height="550px"></iframe>
 
-        <center>
-            <div class="mbr-section-btn mbr-pt-3">
-                <a class="btn btn-md btn-primary-outline display-4" href="#method-1">
-                    Back to Part One</a>
-            </div>
-        </center>
-    </div>
-</section>
+            <center>
+                <div class="mbr-section-btn mbr-pt-3">
+                    <a class="btn btn-md btn-primary-outline display-4" href="#method-1">
+                        Back to Part One</a>
+                </div>
+            </center>
+        </div>
+    </section>
     <section class="teams1 cid-r5jZHCuWND" id="findings">
 
-            <div class="title-wrap mbr-pb-4 align-center">
-                <h3 class="mbr-section-title mbr-semibold mbr-fonts-style display-2">Walkability Assessment Findings
-                </h3>
-            </div>
+        <div class="title-wrap mbr-pb-4 align-center">
+            <h3 class="mbr-section-title mbr-semibold mbr-fonts-style display-2">Walkability Assessment Findings
+            </h3>
+        </div>
 
-        </section>
+    </section>
     <section class="header4 cid-r9" id="findings-obstacles">
-        <iframe src="https://lenezoe.github.io/transportequity-healthcare/lastmilemap_obstacles.html"
-            frameborder="0" width="100%" height="550px"></iframe>
+        <iframe src="https://lenezoe.github.io/transportequity-healthcare/lastmilemap_obstacles.html" frameborder="0"
+            width="100%" height="550px"></iframe>
         <center>
             <div class="mbr-section-btn mbr-pt-3">
                 <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
                     Back to Survey Dimensions</a>
             </div>
         </center>
-</section>
-<section class="header4 cid-r9" id="findings-levelchange">
-    
-    <iframe src="https://lenezoe.github.io/transportequity-healthcare/lastmile_levelchange.html"
-        frameborder="0" width="100%" height="550px"></iframe>
-    <center>
-        <div class="mbr-section-btn mbr-pt-3">
-            <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
-                Back to Survey Dimensions</a>
-        </div>
-    </center>
-</section>
+    </section>
+    <section class="header4 cid-r9" id="findings-levelchange">
+
+        <iframe src="https://lenezoe.github.io/transportequity-healthcare/lastmile_levelchange.html" frameborder="0"
+            width="100%" height="550px"></iframe>
+        <center>
+            <div class="mbr-section-btn mbr-pt-3">
+                <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
+                    Back to Survey Dimensions</a>
+            </div>
+        </center>
+    </section>
     <section class="header4 cid-r9" id="findings-stairs">
         <iframe src="https://lenezoe.github.io/transportequity-healthcare/lastmile_stairs.html" frameborder="0"
             width="100%" height="550px"></iframe>
@@ -3793,8 +3827,8 @@
     </section>
 
     <section class="header4 cid-r9" id="findings-pavementquality">
-        <iframe src="https://lenezoe.github.io/transportequity-healthcare/lastmile_pavementquality.html"
-            frameborder="0" width="100%" height="550px"></iframe>
+        <iframe src="https://lenezoe.github.io/transportequity-healthcare/lastmile_pavementquality.html" frameborder="0"
+            width="100%" height="550px"></iframe>
         <center>
             <div class="mbr-section-btn mbr-pt-3">
                 <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
@@ -3803,8 +3837,8 @@
         </center>
     </section>
     <section class="header4 cid-r9" id="findings-pavementwidth">
-        <iframe src="https://lenezoe.github.io/transportequity-healthcare/lastmile_pavementwidth.html"
-            frameborder="0" width="100%" height="550px"></iframe>
+        <iframe src="https://lenezoe.github.io/transportequity-healthcare/lastmile_pavementwidth.html" frameborder="0"
+            width="100%" height="550px"></iframe>
         <center>
             <div class="mbr-section-btn mbr-pt-3">
                 <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
@@ -3814,14 +3848,33 @@
     </section>
 
     <section class="header4 cid-r9" id="findings-shelter">
-        <iframe src="https://lenezoe.github.io/transportequity-healthcare/lastmile_shelter.html"
-            frameborder="0" width="100%" height="550px"></iframe>
+        <iframe src="https://lenezoe.github.io/transportequity-healthcare/lastmile_shelter.html" frameborder="0"
+            width="100%" height="550px"></iframe>
         <center>
             <div class="mbr-section-btn mbr-pt-3">
                 <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
                     Back to Survey Dimensions</a>
             </div>
         </center>
+    </section>
+
+
+    <section class="teams1 cid-r5jZHCuWND" id="findings-2-total">
+        <div class="title-wrap mbr-pb-4 align-center">
+            <h4 class="mbr-section-title mbr-semibold display-5">Total Walkability Scores
+            </h4>
+        </div>
+        <br>
+        <img src="website-pictures/totalwalkability.png" width="602" height="316" class="totalwalk-image">
+
+
+        <center>
+            <div class="mbr-section-btn mbr-pt-3">
+                <a class="btn btn-md btn-primary-outline display-4" href="#dimensions">
+                    Back to Survey Dimensions</a>
+            </div>
+        </center>
+
     </section>
 
     <section class="features2 cid-r5jZMYfkdt" id="features2-a">
@@ -3832,7 +3885,8 @@
             <div class="mbr-row title mbr-pb-4 align-center">
                 <div class="title-wrap mbr-col-sm-12 mbr-col-md-12">
                     <h2 class="mbr-section-title mbr-semibold mbr-fonts-style display-2">Key Walkability Issues</h2>
-Based on the walkability assessment, key barriers were identified based on specific segments along routes from transit stops to the nearest restructured hospitals. 
+                    Based on the walkability assessment, key barriers were identified based on specific segments along
+                    routes from transit stops to the nearest restructured hospitals.
                 </div>
 
             </div>
@@ -3860,7 +3914,8 @@ Based on the walkability assessment, key barriers were identified based on speci
 
                             <div class="category-wrap mbr-pb-3">
                                 <p class="card-info mbr-fonts-style mbr-regular display-4">
-                               Lack of pictograms and staff to assist illiterate seniors<br>Lack of diversity of wayfinding signage locations, causing crucial signage to be missed.</p>
+                                    Lack of pictograms and staff to assist illiterate seniors<br>Lack of diversity of
+                                    wayfinding signage locations, causing crucial signage to be missed.</p>
 
                             </div>
                         </div>
@@ -3890,8 +3945,9 @@ Based on the walkability assessment, key barriers were identified based on speci
                             <div class="card-title-box mbr-flex flex-wrap mbr-pb-3">
                                 <div class="category-wrap">
                                     <p class="card-info mbr-fonts-style mbr-regular display-4">
-                                       Exposure to vehicular traffic on footpaths, posing potential risk to seniors with diminished ability to react to vehicular traffic.<br>
-                                    Lack of tactile tiles for visually-impaired</p>
+                                        Exposure to vehicular traffic on footpaths, posing potential risk to seniors
+                                        with diminished ability to react to vehicular traffic.<br>
+                                        Lack of tactile tiles for visually-impaired</p>
                                 </div>
                             </div>
 
@@ -3924,7 +3980,8 @@ Based on the walkability assessment, key barriers were identified based on speci
                                 <div class="category-wrap">
                                     <p class="card-info mbr-fonts-style mbr-regular display-4">
                                         Narrow pavement width<br>Level changes or uneven pavements
-                                        <br>Lack of shelter/shade from weather elements</p>
+                                        <br>Lack of shelter/shade from weather elements
+                                    </p>
                                 </div>
                             </div>
                         </div>
